@@ -1,9 +1,10 @@
 import React from "react";
 import Style from '../styles/index.module.css'
-import {HeroSection} from '../components/index'
+import {HeroSection, Service} from '../components/index'
 const index = () => {
   return <div className={Style.homePage}>
     <HeroSection />
+    <Service />
   </div>;
 };
 
