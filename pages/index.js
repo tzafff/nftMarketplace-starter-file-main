@@ -7,7 +7,8 @@ import {
   Subscribe,
   Title,
   Category,
-  Filter
+  Filter,
+  NftCard,
 } from '../components/index'
 const index = () => {
   return <div className={Style.homePage}>
@@ -19,6 +20,7 @@ const index = () => {
         paragraph={"Discover the most outstanding NFTs in all topics of life."}
     />
     <Filter />
+    <NftCard />
     <Title
         heading={"Browse by Category"}
         paragraph={"Explore the NFTs in the most featured categories"}

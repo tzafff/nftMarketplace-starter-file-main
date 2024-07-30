@@ -8,6 +8,7 @@ import Subscribe from "./Subscribe/Subscribe";
 import Title from "./Title/Title";
 import Category from "./Category/Category";
 import Filter from "./Filter/Filter";
+import NftCard from "./NftCard/NftCard";
 
 export {
     Button,
@@ -19,5 +20,6 @@ export {
     Subscribe,
     Title,
     Category,
-    Filter
+    Filter,
+    NftCard,
 }
