@@ -10,14 +10,19 @@ import {
   Filter,
   NftCard,
   Collection,
-  FollowerTab
+  FollowerTab,
+  AudioLive
 } from '../components/index'
 const index = () => {
   return <div className={Style.homePage}>
     <HeroSection />
     <Service />
     <BigNftSlider />
-
+    <Title
+        heading={"Audio Collection"}
+        paragraph={"Discover the most outstanding NFTs in all topics of life."}
+    />
+    <AudioLive />
     <FollowerTab />
     <Collection />
     <Title
