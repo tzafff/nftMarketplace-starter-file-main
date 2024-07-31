@@ -11,7 +11,8 @@ import {
   NftCard,
   Collection,
   FollowerTab,
-  AudioLive
+  AudioLive,
+  Slider
 } from '../components/index'
 const index = () => {
   return <div className={Style.homePage}>
@@ -24,6 +25,7 @@ const index = () => {
     />
     <AudioLive />
     <FollowerTab />
+    <Slider />
     <Collection />
     <Title
         heading={"Featured NFTs"}
