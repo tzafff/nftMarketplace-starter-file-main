@@ -10,6 +10,7 @@ import Category from "./Category/Category";
 import Filter from "./Filter/Filter";
 import NftCard from "./NftCard/NftCard";
 import Collection from "./Collection/Collection";
+import FollowerTab from "./FollowerTab/FollowerTab";
 
 export {
     Button,
@@ -23,5 +24,6 @@ export {
     Category,
     Filter,
     NftCard,
-    Collection
+    Collection,
+    FollowerTab
 }

@@ -9,18 +9,17 @@ import {
   Category,
   Filter,
   NftCard,
-  Collection
+  Collection,
+  FollowerTab
 } from '../components/index'
 const index = () => {
   return <div className={Style.homePage}>
     <HeroSection />
     <Service />
     <BigNftSlider />
+
+    <FollowerTab />
     <Collection />
-    <Title
-        heading={"New Collection"}
-        paragraph={"Discover the most outstanding NFTs in all topics of life."}
-    />
     <Title
         heading={"Featured NFTs"}
         paragraph={"Discover the most outstanding NFTs in all topics of life."}

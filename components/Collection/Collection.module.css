@@ -58,7 +58,7 @@
     }
 
     .collection_box{
-        width: 90%;
+        width: 100%;
         grid-template-columns: 1fr;
         gap: 4rem;
     }
