@@ -14,6 +14,7 @@ import {
   AudioLive,
   Slider,
   Brand,
+  Video,
 } from '../components/index'
 const index = () => {
   return <div className={Style.homePage}>
@@ -41,6 +42,8 @@ const index = () => {
     <Category />
     <Subscribe />
     <Brand />
+    <Video />
+
   </div>;
 };
 
