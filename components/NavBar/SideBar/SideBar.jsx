@@ -29,19 +29,23 @@ const SideBar = ({ setOpenSideMenu }) => {
         },
         {
             name: "Search",
-            link: "search"
+            link: "searchPage"
         },
         {
             name: "Author Profile",
-            link: "author-profile"
+            link: "author"
         },
         {
             name: "NFT Details",
-            link: "NFT-details"
+            link: "nft-details"
         },
         {
             name: "Account Settings",
-            link: "account-settings"
+            link: "account"
+        },
+        {
+            name: "Upload NFT",
+            link: "upload-nft"
         },
         {
             name: "Connect Wallet",
