@@ -43,8 +43,14 @@ import musiceWave from "./musicwave.png";
 import update from "./update.png";
 import earn from './eran.png'
 import upload from './upload2.png'
+import metamask from './metamask.png'
+import walletconnect from './walletconnect.png'
+import coinbase from './coibase.webp'
 
 export default {
+  coinbase,
+  walletconnect,
+  metamask,
   upload,
   earn,
   collection,
