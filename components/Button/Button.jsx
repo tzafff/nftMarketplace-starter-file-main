@@ -1,14 +1,23 @@
 import React from 'react'
 
 import Style from './Button.module.css'
-const Button = ({ icon, btnName, handleClick, classStyle }) => {
-
+import Link from "next/link";
+const Button = ({ icon, btnName, handleClick, classStyle, link }) => {
+    if(!link) link=""
     return (
         <div className={Style.box}>
-            <button className={`${Style.button} ${classStyle}` } onClick={() => handleClick()}>
-                {icon} {btnName}
-            </button>
+            {link ? (
+                <Link href={link} passHref>
+                    <a className={`${Style.button} ${classStyle}`} onClick={handleClick}>
+                        {icon} {btnName}
+                    </a>
+                </Link>
+            ) : (
+                <button className={`${Style.button} ${classStyle}`} onClick={handleClick}>
+                    {icon} {btnName}
+                </button>
+            )}
         </div>
-    )
+    );
 }
 export default Button

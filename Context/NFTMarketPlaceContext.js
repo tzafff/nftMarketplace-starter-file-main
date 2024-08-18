@@ -65,7 +65,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
         try {
             if (!window.ethereum) return console.log("Please Install Metamask");
 
-            const accounts = await window.ethereum.request({method: "eth_requestAccount"});
+            const accounts = await window.ethereum.request({method: "eth_requestAccounts"});
             setCurrentAccount(accounts[0])
             window.location.reload()
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -11,6 +11,8 @@ import { Discover, HelpCenter, Notification, Profile, SideBar } from './index';
 
 import { Button } from '../index';
 import images from '../../img';
+
+import { NFTMarketPlaceContext } from '../../Context/NFTMarketPlaceContext'
 
 const NavBar = () => {
     // UseState Components
@@ -66,6 +68,11 @@ const NavBar = () => {
         setOpenSideMenu(!openSideMenu);
     };
 
+    // SC INTEGRATION
+    const { currentAccount, connectWallet } = useContext(NFTMarketPlaceContext)
+
+
+
     return (
         <div className={Style.navbar}>
             <div className={Style.navbar_container}>
@@ -111,7 +118,17 @@ const NavBar = () => {
 
                     {/*    CREATE BUTTON*/}
                     <div className={Style.navbar_container_right_button}>
-                        <Button btnName="Create" handleClick={() => { }} />
+                        {currentAccount === "" ? (
+                                <Button btnName={"Connect Wallet"} handleClick={() => connectWallet()}/>
+                            ) : (
+                            <Button
+                                btnName="Create"
+                                handleClick={() => {}}
+                                link="/upload-nft"
+                            />
+                            )
+                        }
+
                     </div>
 
                     {/*    USER PROFILE */}
