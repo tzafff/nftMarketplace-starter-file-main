@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import Style from '../styles/index.module.css'
 import {
   HeroSection,
@@ -16,7 +16,15 @@ import {
   Brand,
   Video,
 } from '../components/index'
+import {NFTMarketPlaceContext} from "../Context/NFTMarketPlaceContext";
 const index = () => {
+  const { checkIfWalletIsConnected } = useContext(NFTMarketPlaceContext)
+  useEffect(() => {
+    checkIfWalletIsConnected();
+  }, []);
+
+
+
   return <div className={Style.homePage}>
     <HeroSection />
     <Service />
