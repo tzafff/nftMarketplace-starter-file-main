@@ -159,7 +159,11 @@ const NavBar = () => {
             {/*   SIDE BAR ONLY IN MOBILE */}
             {openSideMenu && (
                 <div className={Style.sideBar}>
-                    <SideBar setOpenSideMenu={setOpenSideMenu} />
+                    <SideBar
+                        setOpenSideMenu={setOpenSideMenu}
+                        currentAccount={currentAccount}
+                        connectWallet={connectWallet}
+                    />
                 </div>
             )}
         </div>
