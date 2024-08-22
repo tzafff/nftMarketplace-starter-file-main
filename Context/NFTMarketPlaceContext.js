@@ -159,6 +159,8 @@ export const NFTMarketPlaceProvider = (({children}) => {
             await router.push('/searchPage');
         } catch (error) {
             console.log("Error while creating sale")
+            console.log(error)
+
 
         }
     }
@@ -170,8 +172,8 @@ export const NFTMarketPlaceProvider = (({children}) => {
             const provider = new ethers.providers.JsonRpcProvider();
             const contract = fetchContract(provider)
 
-            const data = contract.fetchMarketItems();
-            //console.log(data)
+            const data = await contract.fetchMarketItems();
+            console.log(data)
 
             const items = await Promise.all(data.map(async ({tokenId, seller, owner, price: unformattedPrice}) => {
                 const tokenURI = await contract.tokenURI(tokenId);
@@ -248,6 +250,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
         });
 
         await transaction.wait();
+        await router.push("/author")
     }
 
 

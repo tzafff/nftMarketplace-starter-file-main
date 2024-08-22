@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import Image from "next/image";
 import {MdVerified, MdCloudUpload, MdTimer, MdReportProblem, MdOutlineDeleteSweep} from "react-icons/md";
 import {BsThreeDots} from "react-icons/bs";
@@ -17,7 +17,10 @@ import images from '../../img'
 import {Button} from '../../components/index'
 import {NFTTabs} from '../index'
 
-const NftDescription = () => {
+import { NFTMarketPlaceContext } from '../../Context/NFTMarketPlaceContext'
+import Link from "next/link";
+
+const NftDescription = ({ nft }) => {
     const [social, setSocial] = useState(false);
     const [NFTMenu, setNFTMenu] = useState(false);
     const [history, setHistory] = useState(true);
@@ -91,7 +94,7 @@ const NftDescription = () => {
         }
     }
 
-
+    const { buyNFT, currentAccount } = useContext(NFTMarketPlaceContext);
 
     return (
         <div className={Style.NftDescription}>
@@ -148,7 +151,7 @@ const NftDescription = () => {
 
                 {/*     PART TWO*/}
                 <div className={Style.NftDescription_box_profile}>
-                    <h1>BearX #23456</h1>
+                    <h1>{nft.name} #{nft.tokenId}</h1>
                     <div className={Style.NftDescription_box_profile_box}>
                         <div className={Style.NftDescription_box_profile_box_left}>
                             <Image
@@ -161,17 +164,20 @@ const NftDescription = () => {
 
                             <div className={Style.NftDescription_box_profile_left_info}>
                                 <small>Creator</small>
+
                                 <br/>
-                                <span>
-                                    Chris Tzaff
-                                    <MdVerified/>
-                                </span>
+                                <Link href={{pathname: '/author', query: `${nft.seller}`}}>
+                                    <span>
+                                        Chris Tzaff
+                                        <MdVerified/>
+                                    </span>
+                                </Link>
                             </div>
                         </div>
 
                         <div className={Style.NftDescription_box_profile_box_right}>
                             <Image
-                                src={images.user2}
+                                src={images.creatorbackground1}
                                 alt={"profile"}
                                 width={40}
                                 height={40}
@@ -179,10 +185,10 @@ const NftDescription = () => {
                             />
 
                             <div className={Style.NftDescription_box_profile_box_right_info}>
-                                <small>Creator</small>
+                                <small>Collection</small>
                                 <br/>
                                 <span>
-                                    Chris Tzaff
+                                   LIL UZI
                                     <MdVerified/>
                                 </span>
                             </div>
@@ -221,7 +227,7 @@ const NftDescription = () => {
                             <div className={Style.NftDescription_box_profile_bidding_box_price_bid}>
                                 <small>Current Bid</small>
                                 <p>
-                                    1.000 ETH
+                                    {nft.price} ETH
                                     <span>(≈ $3,221.22)</span>
                                 </p>
                             </div>
@@ -230,19 +236,37 @@ const NftDescription = () => {
                         </div>
 
                         <div className={Style.NftDescription_box_biding_box_button}>
-                            <Button
-                                icon=<FaWallet/>
-                            btnName={"Place a Bid"}
-                            handleClick={() => {
-                        }}
-                            classStyle={Style.button}
-                            />
+
+                            {currentAccount === nft.seller.toLowerCase() ? (
+                                <p>
+                                    You cannot buy your own NFT!
+                                </p>
+                            ) : currentAccount === nft.owner.toLowerCase() ? (
+                                <Button
+                                    icon={<FaWallet />}
+                                    btnName={"List on MarketPlace"}
+                                    handleClick={() => {
+
+                                    }}
+                                    classStyle={Style.button}
+                                />
+                            ) : (
+                                <Button
+                                    icon={<FaWallet />}
+                                    btnName={"Buy NFT"}
+                                    handleClick={() => buyNFT(nft)}
+                                    classStyle={Style.button}
+                                />
+                            )
+                            }
+
+
                             <Button
                                 icon=<FaPercentage/>
-                            btnName={"Make offer"}
-                            handleClick={() => {
-                        }}
-                            classStyle={Style.button}
+                                btnName={"Make offer"}
+                                handleClick={() => {
+                                }}
+                                classStyle={Style.button}
                             />
                         </div>
 
