@@ -18,6 +18,8 @@ import {
   Loader
 } from '../components/index'
 import {NFTMarketPlaceContext} from "../Context/NFTMarketPlaceContext";
+import {getTopCreators} from '../TopCreators/TopCreators';
+
 const index = () => {
 
   const { checkIfWalletIsConnected } = useContext(NFTMarketPlaceContext)
@@ -29,6 +31,11 @@ const index = () => {
   const {fetchNFTs} = useContext(NFTMarketPlaceContext);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
+
+  // Creator List
+  const creators = getTopCreators(nfts);
+  // console.log(creators)
+
 
   useEffect(() => {
     fetchNFTs().then((item) => {
@@ -49,7 +56,7 @@ const index = () => {
         paragraph={"Discover the most outstanding NFTs in all topics of life."}
     />
     <AudioLive />
-    <FollowerTab />
+    {creators.length === 0 ? <Loader /> :  <FollowerTab TopCreator={creators}/>}
     <Slider />
     <Collection />
     <Title
