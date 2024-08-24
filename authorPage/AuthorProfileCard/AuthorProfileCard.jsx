@@ -19,7 +19,7 @@ import images from '../../img'
 import {Button} from '../../components/index'
 
 
-const AuthorProfileCard = () => {
+const AuthorProfileCard = ({currentAccount}) => {
 
     const [share, setShare] = useState(false);
     const [report, setReport] = useState(false);
@@ -72,7 +72,7 @@ const AuthorProfileCard = () => {
                     <div className={Style.AuthorProfileCard_box_info_address}>
                         <input
                             type={"text"}
-                            value={"0x1678FB9b230722A79fFcA6DB3b11B8c3Ca18Ab9e"}
+                            value={currentAccount}
                             id={"myInput"}
                             readOnly
                         />

@@ -27,14 +27,14 @@ const AuthorTaps = ({ setCollectibles, setCreated, setLike, setFollower, setFoll
 
     const openTab = (e) => {
         const btnText = e.target.innerText;
-        if(btnText === "Collectibles"){
+        if(btnText === "For Sale"){
             setCollectibles(true)
             setCreated(false)
             setFollower(false)
             setFollowing(false)
             setLike(false)
             setActiveBtn(1)
-        } else if (btnText === "Created") {
+        } else if (btnText === "Owned") {
             setCollectibles(false)
             setCreated(true)
             setFollower(false)
@@ -75,13 +75,13 @@ const AuthorTaps = ({ setCollectibles, setCreated, setLike, setFollower, setFoll
                             onClick={(e) => openTab(e)}
                             className={`${activeBtn === 1 ? Style.active : ""}`}
                         >
-                            Collectibles{""}
+                            For Sale{""}
                         </button>
                         <button
                             onClick={(e) => openTab(e)}
                             className={`${activeBtn === 2 ? Style.active : ""}`}
                         >
-                            Created{""}
+                            Owned{""}
                         </button>
                         <button
                             onClick={(e) => openTab(e)}

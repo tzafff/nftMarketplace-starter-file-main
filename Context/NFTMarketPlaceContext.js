@@ -206,7 +206,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
 
             const data = type === "fetchItemsListed"
                 ? await contract.fetchItemsListed()
-                : await contract.fetchMyNFT();
+                : await contract.fetchMyNFTs();
 
             const items = await Promise.all(
                 data.map(async ({tokenId, seller, owner, price: unformattedPrice}) => {
@@ -239,6 +239,10 @@ export const NFTMarketPlaceProvider = (({children}) => {
 
         }
     }
+
+    useEffect(() => {
+        fetchMyNFTsOrListedNFTs()
+    }, []);
 
     //--------BUY NFTs
     const buyNFT = async (nft) => {

@@ -5,7 +5,7 @@ import Style from './AuthorNFTCardBox.module.css'
 import images from '../../img'
 import {NFTCardTwo} from '../../collectionPage/index'
 import FollowerTabCard from "../../components/FollowerTab/FollowerTabCard/FollowerTabCard";
-const AuthorNftCardBox = ({ collectibles, created, like, follower, following }) => {
+const AuthorNftCardBox = ({ collectibles, created, like, follower, following, nfts, myNFTs }) => {
 
     const collectiblesArray = [
         images.nft_image_1,
@@ -79,8 +79,8 @@ const AuthorNftCardBox = ({ collectibles, created, like, follower, following }) 
 
     return (
         <div className={Style.AuthorNftCardBox}>
-            { collectibles && <NFTCardTwo NFTData={collectiblesArray}/> }
-            { created && <NFTCardTwo  NFTData={createdArray}/> }
+            { collectibles && <NFTCardTwo NFTData={nfts}/> }
+            { created && <NFTCardTwo  NFTData={myNFTs}/> }
             { like && <NFTCardTwo NFTData={likeArray}/> }
             {/*TODO MAYBE NEEDS KEY IN THE MAP??*/}
             {follower && (
