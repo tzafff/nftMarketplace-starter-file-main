@@ -1,23 +1,29 @@
 import React from 'react'
+import { useRouter } from 'next/router';
+import Style from './Button.module.css';
 
-import Style from './Button.module.css'
-import Link from "next/link";
 const Button = ({ icon, btnName, handleClick, classStyle, link }) => {
-    if(!link) link=""
+    const router = useRouter();
+
+    const handleButtonClick = () => {
+        if (link) {
+            router.push(link); // Navigate to the provided link
+        }
+        if (handleClick) {
+            handleClick(); // Call the provided click handler
+        }
+    };
+
     return (
         <div className={Style.box}>
-            {link ? (
-                <Link href={link} passHref>
-                    <a className={`${Style.button} ${classStyle}`} onClick={handleClick}>
-                        {icon} {btnName}
-                    </a>
-                </Link>
-            ) : (
-                <button className={`${Style.button} ${classStyle}`} onClick={handleClick}>
-                    {icon} {btnName}
-                </button>
-            )}
+            <button
+                className={`${Style.button} ${classStyle}`}
+                onClick={handleButtonClick}
+            >
+                {icon} {btnName}
+            </button>
         </div>
     );
 }
-export default Button
+
+export default Button;
