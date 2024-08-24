@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -12,17 +12,24 @@ import { Discover, HelpCenter, Notification, Profile, SideBar } from './index';
 import { Button, Error } from '../index';
 import images from '../../img';
 
-import { NFTMarketPlaceContext } from '../../Context/NFTMarketPlaceContext'
+import { NFTMarketPlaceContext } from '../../Context/NFTMarketPlaceContext';
 
 const NavBar = () => {
-    // UseState Components
     const [discover, setDiscover] = useState(false);
     const [help, setHelp] = useState(false);
     const [notification, setNotification] = useState(false);
     const [profile, setProfile] = useState(false);
     const [openSideMenu, setOpenSideMenu] = useState(false);
 
+    const closeAllMenus = () => {
+        setDiscover(false);
+        setHelp(false);
+        //setNotification(false);
+        //setProfile(false);
+    };
+
     const openMenu = (e) => {
+        e.stopPropagation(); // Stop event propagation
         const btnText = e.target.innerText;
         if (btnText === "Discover") {
             setDiscover(!discover);
@@ -35,43 +42,38 @@ const NavBar = () => {
             setNotification(false);
             setProfile(false);
         } else {
-            setDiscover(false);
-            setHelp(false);
-            setNotification(false);
-            setProfile(false);
+            closeAllMenus();
         }
     };
 
     const openNotification = () => {
-        if (!notification) {
-            setNotification(true);
-            setDiscover(false);
-            setHelp(false);
-            setProfile(false);
-        } else {
-            setNotification(false);
-        }
+        setNotification(!notification);
+        // closeAllMenus();
     };
 
     const openProfile = () => {
-        if (!profile) {
-            setProfile(true);
-            setNotification(false);
-            setDiscover(false);
-            setHelp(false);
-        } else {
-            setProfile(false);
-        }
+        setProfile(!profile);
+        closeAllMenus();
     };
 
     const openSideBar = () => {
         setOpenSideMenu(!openSideMenu);
     };
 
-    // SC INTEGRATION
-    const { currentAccount, connectWallet, openError } = useContext(NFTMarketPlaceContext)
+    const { currentAccount, connectWallet, openError } = useContext(NFTMarketPlaceContext);
 
+    // Close dropdowns when clicking outside
+    React.useEffect(() => {
+        const handleOutsideClick = () => {
+            closeAllMenus();
+        };
 
+        window.addEventListener('click', handleOutsideClick);
+
+        return () => {
+            window.removeEventListener('click', handleOutsideClick);
+        };
+    }, []);
 
     return (
         <div className={Style.navbar}>
@@ -89,49 +91,39 @@ const NavBar = () => {
                         </div>
                     </div>
                 </div>
-                {/*    END OF LEFT SECTION */}
+
                 <div className={Style.navbar_container_right}>
                     <div className={Style.navbar_container_right_discover}>
-                        {/*    DISCOVER MENU */}
                         <p onClick={(e) => openMenu(e)}>Discover</p>
                         {discover && (
                             <div className={Style.navbar_container_right_discover_box}>
-                                <Discover />
-                            </div>
-                        )}
-                    </div>
-                    {/*    HELP CENTER */}
-                    <div className={Style.navbar_container_right_help}>
-                        <p onClick={(e) => openMenu(e)}>Help Center</p>
-                        {help && (
-                            <div className={Style.navbar_container_right_help_box}>
-                                <HelpCenter />
+                                <Discover closeAllMenus={closeAllMenus} />
                             </div>
                         )}
                     </div>
 
-                    {/*    NOTIFICATION */}
+                    <div className={Style.navbar_container_right_help}>
+                        <p onClick={(e) => openMenu(e)}>Help Center</p>
+                        {help && (
+                            <div className={Style.navbar_container_right_help_box}>
+                                <HelpCenter closeAllMenus={closeAllMenus} />
+                            </div>
+                        )}
+                    </div>
+
                     <div className={Style.navbar_container_right_notify}>
                         <MdNotifications className={Style.notify} onClick={() => openNotification()} />
                         {notification && <Notification />}
                     </div>
 
-                    {/*    CREATE BUTTON*/}
                     <div className={Style.navbar_container_right_button}>
                         {currentAccount === "" ? (
-                                <Button btnName={"Connect Wallet"} handleClick={() => connectWallet()}/>
-                            ) : (
-                            <Button
-                                btnName="Create"
-                                handleClick={() => {}}
-                                link="/upload-nft"
-                            />
-                            )
-                        }
-
+                            <Button btnName={"Connect Wallet"} handleClick={() => connectWallet()} />
+                        ) : (
+                            <Button btnName="Create" handleClick={() => { }} link="/upload-nft" />
+                        )}
                     </div>
 
-                    {/*    USER PROFILE */}
                     <div className={Style.navbar_container_right_profile_box}>
                         <div className={Style.navbar_container_right_profile}>
                             <Image
@@ -142,21 +134,16 @@ const NavBar = () => {
                                 onClick={(e) => openProfile()}
                                 className={Style.navbar_container_right_profile}
                             />
-                            {profile && <Profile currentAccount={currentAccount}/>}
+                            {profile && <Profile currentAccount={currentAccount} />}
                         </div>
                     </div>
 
-                    {/*    MENU BUTTON */}
                     <div className={Style.navbar_container_right_menuBtn}>
-                        <CgMenuRight
-                            className={Style.menuIcon}
-                            onClick={() => openSideBar()}
-                        />
+                        <CgMenuRight className={Style.menuIcon} onClick={() => openSideBar()} />
                     </div>
                 </div>
             </div>
 
-            {/*   SIDE BAR ONLY IN MOBILE */}
             {openSideMenu && (
                 <div className={Style.sideBar}>
                     <SideBar
@@ -171,4 +158,5 @@ const NavBar = () => {
         </div>
     );
 };
+
 export default NavBar;
