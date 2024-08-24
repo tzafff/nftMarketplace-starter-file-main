@@ -19,6 +19,7 @@ import {NFTTabs} from '../index'
 
 import { NFTMarketPlaceContext } from '../../Context/NFTMarketPlaceContext'
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 const NftDescription = ({ nft }) => {
     const [social, setSocial] = useState(false);
@@ -26,6 +27,8 @@ const NftDescription = ({ nft }) => {
     const [history, setHistory] = useState(true);
     const [provenance, setProvenance] = useState(false);
     const [owner, setOwner] = useState(false);
+
+    const router = useRouter()
 
     const historyArray = [
         images.user1,
@@ -237,17 +240,15 @@ const NftDescription = ({ nft }) => {
 
                         <div className={Style.NftDescription_box_biding_box_button}>
 
-                            {currentAccount === nft.seller.toLowerCase() ? (
+                            {nft && nft.seller && nft.owner && currentAccount === nft.seller.toLowerCase() ? (
                                 <p>
                                     You cannot buy your own NFT!
                                 </p>
-                            ) : currentAccount === nft.owner.toLowerCase() ? (
+                            ) : nft && nft.owner && currentAccount === nft.owner.toLowerCase() ? (
                                 <Button
                                     icon={<FaWallet />}
                                     btnName={"List on MarketPlace"}
-                                    handleClick={() => {
-
-                                    }}
+                                    handleClick={() => router.push(`/resell-token?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`)}
                                     classStyle={Style.button}
                                 />
                             ) : (
@@ -257,8 +258,8 @@ const NftDescription = ({ nft }) => {
                                     handleClick={() => buyNFT(nft)}
                                     classStyle={Style.button}
                                 />
-                            )
-                            }
+                            )}
+
 
 
                             <Button
