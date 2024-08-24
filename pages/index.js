@@ -15,6 +15,7 @@ import {
   Slider,
   Brand,
   Video,
+  Loader
 } from '../components/index'
 import {NFTMarketPlaceContext} from "../Context/NFTMarketPlaceContext";
 const index = () => {
@@ -56,7 +57,8 @@ const index = () => {
         paragraph={"Discover the most outstanding NFTs in all topics of life."}
     />
     <Filter />
-    <NftCard NFTData={nfts}/>
+    {nfts.length === 0 ? <Loader /> : <NftCard NFTData={nfts}/>}
+
     <Title
         heading={"Browse by Category"}
         paragraph={"Explore the NFTs in the most featured categories"}
