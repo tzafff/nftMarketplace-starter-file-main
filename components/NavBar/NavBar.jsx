@@ -9,7 +9,7 @@ import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import Style from './NavBar.module.css';
 import { Discover, HelpCenter, Notification, Profile, SideBar } from './index';
 
-import { Button } from '../index';
+import { Button, Error } from '../index';
 import images from '../../img';
 
 import { NFTMarketPlaceContext } from '../../Context/NFTMarketPlaceContext'
@@ -69,7 +69,7 @@ const NavBar = () => {
     };
 
     // SC INTEGRATION
-    const { currentAccount, connectWallet } = useContext(NFTMarketPlaceContext)
+    const { currentAccount, connectWallet, openError } = useContext(NFTMarketPlaceContext)
 
 
 
@@ -166,6 +166,8 @@ const NavBar = () => {
                     />
                 </div>
             )}
+
+            {openError && <Error />}
         </div>
     );
 };

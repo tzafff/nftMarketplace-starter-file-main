@@ -47,8 +47,11 @@ import metamask from './metamask.png'
 import walletconnect from './walletconnect.png'
 import coinbase from './coibase.webp'
 import loader from './loader.gif'
+import error from './error.jpg'
+import error2 from './error2.png'
 
 export default {
+  error2,
   loader,
   coinbase,
   walletconnect,

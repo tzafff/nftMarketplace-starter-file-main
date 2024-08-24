@@ -23,7 +23,8 @@ const connectingWithSmartContract = async () => {
         const contract = fetchContract(signer)
         return contract;
     } catch (error) {
-        console.log("Something went wrong while connecting with contract")
+        console.error("Error connecting to the smart contract:", error.message);
+        throw new Error("Failed to connect to the smart contract. Please try again.");
 
     }
 }
@@ -33,6 +34,8 @@ export const NFTMarketPlaceProvider = (({children}) => {
     const titleData = "Discover, collect, and sell NFTs"
 
     //--------USE STATES
+    const [error, setError] = useState("");
+    const [openError, setOpenError] = useState(false);
     const [currentAccount, setCurrentAccount] = useState("");
 
     const router = useRouter();
@@ -40,20 +43,25 @@ export const NFTMarketPlaceProvider = (({children}) => {
     //--------CHECK IF WALLET IS CONNECTED
     const checkIfWalletIsConnected = async () => {
         try {
-            if (!window.ethereum) return console.log("Please Install Metamask");
+            if (!window.ethereum) {
+                setError("MetaMask is not installed. Please install it to continue.");
+                setOpenError(true);
+                return;
+            }
 
             const account = await window.ethereum.request({method: "eth_accounts"});
 
             if (account.length) {
                 setCurrentAccount(account[0])
             } else {
-                console.log("No Account Found")
-
+                setError("No account found. Please connect your wallet.");
+                setOpenError(true);
             }
 
-
         } catch (error) {
-            console.log("Something went wrong while connecting wallet!")
+            setError("Failed to check if wallet is connected. Please try again.");
+            setOpenError(true);
+            console.error("Error checking wallet connection:", error.message);
 
         }
     }
@@ -65,13 +73,19 @@ export const NFTMarketPlaceProvider = (({children}) => {
     //--------CONNECT WALLET
     const connectWallet = async () => {
         try {
-            if (!window.ethereum) return console.log("Please Install Metamask");
+            if (!window.ethereum) {
+                setError("MetaMask is not installed. Please install it to continue.");
+                setOpenError(true);
+                return;
+            }
 
             const accounts = await window.ethereum.request({method: "eth_requestAccounts"});
             setCurrentAccount(accounts[0])
 
         } catch (error) {
-            console.log("Something went wrong while connecting wallet!")
+            setError("Failed to connect wallet. Please try again.");
+            setOpenError(true);
+            console.error("Error connecting wallet:", error.message);
         }
     }
 
@@ -108,16 +122,18 @@ export const NFTMarketPlaceProvider = (({children}) => {
             console.log("Uploaded successfully, IPFS URL:", ipfsUrl);
             return ipfsUrl;
         } catch (error) {
+            setError("Failed to upload file to IPFS via Pinata. Please try again.");
+            setOpenError(true);
             console.error("Error uploading to IPFS via Pinata:", error.message);
-            console.error("Full error details:", error.response ? error.response.data : error);
+            throw error;
         }
     };
 
     //--------CREATE AN NFT
     const createNFT = async (name, price, image, description, router) => {
         if (!name || !description || !price || !image) {
-            alert("Form Input Data missing");
-            console.log('Form Input Data missing');
+            setError("All fields are required to create an NFT. Please complete the form.");
+            setOpenError(true);
             return;
         }
 
@@ -137,7 +153,9 @@ export const NFTMarketPlaceProvider = (({children}) => {
             await createSale(url, price);
             await router.push('/searchPage');
         } catch (error) {
-            console.error('Error while creating NFT:', error.response ? error.response.data : error.message);
+            setError('Failed to create NFT. Please check your input and try again.');
+            setOpenError(true);
+            console.error('Error creating NFT:', error.response ? error.response.data : error.message);
         }
     };
 
@@ -159,8 +177,9 @@ export const NFTMarketPlaceProvider = (({children}) => {
             console.log(transaction)
 
         } catch (error) {
-            console.log("Error while creating sale")
-            console.log(error)
+            setError("Failed to create sale. Please ensure you have sufficient funds and try again.");
+            setOpenError(true);
+            console.error("Error creating sale:", error.message);
 
 
         }
@@ -174,7 +193,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
             const contract = fetchContract(provider)
 
             const data = await contract.fetchMarketItems();
-            console.log(data)
+            //console.log(data)
 
             const items = await Promise.all(data.map(async ({tokenId, seller, owner, price: unformattedPrice}) => {
                 const tokenURI = await contract.tokenURI(tokenId);
@@ -191,7 +210,9 @@ export const NFTMarketPlaceProvider = (({children}) => {
             return items;
 
         } catch (error) {
-            console.log("Error while fetching NFTS")
+            setError("Failed to fetch NFTs. Please refresh the page or try again later.");
+            setOpenError(true);
+            console.error("Error fetching NFTs:", error.message);
 
         }
     }
@@ -236,8 +257,9 @@ export const NFTMarketPlaceProvider = (({children}) => {
 
             return items;
         } catch (error) {
-            console.log("Error while fetching Listed NFTs")
-
+            setError("Failed to fetch your NFTs or listed NFTs. Please try again.");
+            setOpenError(true);
+            console.error("Error fetching NFTs:", error.message);
         }
     }
 
@@ -270,7 +292,11 @@ export const NFTMarketPlaceProvider = (({children}) => {
             buyNFT,
             titleData,
             currentAccount,
-            createSale
+            createSale,
+            setOpenError,
+            openError,
+            error,
+            setError
         }}
     >
         {children}

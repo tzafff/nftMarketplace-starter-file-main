@@ -15,7 +15,8 @@ import {
   Slider,
   Brand,
   Video,
-  Loader
+  Loader,
+  Error
 } from '../components/index'
 import {NFTMarketPlaceContext} from "../Context/NFTMarketPlaceContext";
 import {getTopCreators} from '../TopCreators/TopCreators';
@@ -64,6 +65,7 @@ const index = () => {
         paragraph={"Discover the most outstanding NFTs in all topics of life."}
     />
     <Filter />
+
     {nfts.length === 0 ? <Loader /> : <NftCard NFTData={nfts}/>}
 
     <Title
