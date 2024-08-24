@@ -1,9 +1,10 @@
-import React,{useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import Image from "next/image";
 
 import Style from '../styles/connect-wallet.module.css';
 import images from '../img'
 import walletconnect from "../img/walletconnect.png";
+import {NFTMarketPlaceContext} from '../Context/NFTMarketPlaceContext'
 const ConnectWallet = () => {
 
     const [activeBtn, setActiveBtn] = useState(1);
@@ -22,6 +23,8 @@ const ConnectWallet = () => {
         },
     ]
 
+    const { currentAccount, connectWallet } = useContext(NFTMarketPlaceContext)
+
     return (
         <div className={Style.connectWallet}>
             <div className={Style.connectWallet_box}>
@@ -37,7 +40,7 @@ const ConnectWallet = () => {
                                 ${activeBtn === i + 1 ? Style.active : ""}`
                             }
                             key={i + 1}
-                            onClick={() => setActiveBtn(i + 1)}
+                            onClick={() => (setActiveBtn(i + 1), connectWallet())}
                         >
                             <Image
                                 src={el.provider}

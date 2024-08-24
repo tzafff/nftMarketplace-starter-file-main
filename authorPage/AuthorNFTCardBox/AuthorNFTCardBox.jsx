@@ -81,7 +81,7 @@ const AuthorNftCardBox = ({ collectibles, created, like, follower, following, nf
         <div className={Style.AuthorNftCardBox}>
             { collectibles && <NFTCardTwo NFTData={nfts}/> }
             { created && <NFTCardTwo  NFTData={myNFTs}/> }
-            { like && <NFTCardTwo NFTData={likeArray}/> }
+            { like && <NFTCardTwo NFTData={nfts}/> }
             {/*TODO MAYBE NEEDS KEY IN THE MAP??*/}
             {follower && (
                 <div className={Style.AuthorNftCardBox_box}>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Style from '../styles/index.module.css'
 import {
   HeroSection,
@@ -18,9 +18,23 @@ import {
 } from '../components/index'
 import {NFTMarketPlaceContext} from "../Context/NFTMarketPlaceContext";
 const index = () => {
+
   const { checkIfWalletIsConnected } = useContext(NFTMarketPlaceContext)
+
   useEffect(() => {
     checkIfWalletIsConnected();
+  }, []);
+
+  const {fetchNFTs} = useContext(NFTMarketPlaceContext);
+  const [nfts, setNfts] = useState([]);
+  const [nftsCopy, setNftsCopy] = useState([]);
+
+  useEffect(() => {
+    fetchNFTs().then((item) => {
+      setNfts(item?.reverse())
+      setNftsCopy(item)
+      console.log(item)
+    })
   }, []);
 
 
@@ -42,7 +56,7 @@ const index = () => {
         paragraph={"Discover the most outstanding NFTs in all topics of life."}
     />
     <Filter />
-    <NftCard />
+    <NftCard NFTData={nfts}/>
     <Title
         heading={"Browse by Category"}
         paragraph={"Explore the NFTs in the most featured categories"}

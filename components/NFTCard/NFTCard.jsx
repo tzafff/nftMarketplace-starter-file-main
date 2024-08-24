@@ -4,8 +4,10 @@ import {BsImages} from "react-icons/bs";
 import Image from "next/image";
 import images from '../../img'
 import Style from './NFTCard.module.css'
+const NftCard = ({NFTData}) => {
 
-const NftCard = () => {
+
+
     const featuredArray = [
         images.nft_image_1,
         images.nft_image_2,
@@ -29,11 +31,11 @@ const NftCard = () => {
     }
     return (
         <div className={Style.NFTCard}>
-            {featuredArray.map((el, i) => (
+            {NFTData.map((el, i) => (
                 <div className={Style.NFTCard_box} key={i+1}>
                     <div className={Style.NFTCard_box_img}>
                         <Image
-                            src={el}
+                            src={el.image}
                             alt="NFT IMAGE"
                             width={600}
                             height={600}
@@ -68,12 +70,12 @@ const NftCard = () => {
                     <div className={Style.NFTCard_box_update_details}>
                         <div className={Style.NFTCard_box_update_details_price}>
                             <div className={Style.NFTCard_box_update_details_price_box}>
-                                <h4>Clone #123123</h4>
+                                <h4>{el.name} #{el.tokenId}</h4>
 
                                 <div className={Style.NFTCard_box_update_details_price_box_box}>
                                     <div className={Style.NFTCard_box_update_details_price_box_bid}>
                                         <small>Current Bid</small>
-                                        <p>1.000ETH</p>
+                                        <p>{el.price}ETH</p>
                                     </div>
                                     <div className={Style.NFTCard_box_update_details_price_box_stock}>
                                         <small>63 in stock</small>
