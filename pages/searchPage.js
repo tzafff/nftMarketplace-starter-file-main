@@ -10,16 +10,21 @@ import {NFTMarketPlaceContext} from '../Context/NFTMarketPlaceContext'
 
 const SearchPage = () => {
 
-    const {fetchNFTs} = useContext(NFTMarketPlaceContext);
+    const {fetchNFTs, setError} = useContext(NFTMarketPlaceContext);
     const [nfts, setNfts] = useState([]);
     const [nftsCopy, setNftsCopy] = useState([]);
 
     useEffect(() => {
-        fetchNFTs().then((item) => {
-            setNfts(item?.reverse())
-            setNftsCopy(item)
-            console.log(item)
-        })
+        try {
+            fetchNFTs().then((item) => {
+                setNfts(item?.reverse())
+                setNftsCopy(item)
+                console.log(item)
+            })
+        } catch (error) {
+            setError("Failed to fetch your NFTs or listed NFTs. Please try again.");
+        }
+
     }, []);
 
     const onHandleSearch = (value) => {
