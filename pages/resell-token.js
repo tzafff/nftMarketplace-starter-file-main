@@ -36,7 +36,7 @@ const ResellToken = () => {
 
         }
         await createSale(tokenURI, price, true, id);
-        router.push("/author")
+        router.push("/creator")
     }
 
     return (

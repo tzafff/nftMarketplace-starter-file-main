@@ -9,7 +9,7 @@ import images from '../img'
 
 import {NFTMarketPlaceContext} from '../Context/NFTMarketPlaceContext'
 
-const Author = () => {
+const Creator = () => {
 
     const followerArray = [
         {
@@ -100,4 +100,4 @@ const Author = () => {
         </div>
     )
 }
-export default Author
+export default Creator

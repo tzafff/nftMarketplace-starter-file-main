@@ -36,7 +36,7 @@ const Profile = ({currentAccount}) => {
                     <div className={Style.profile_menu_one_item}>
                         <FaUserAlt />
                         <p>
-                            <Link href={{pathname: '/author'}}> My Profile</Link>
+                            <Link href={{pathname: '/creator'}}> My Profile</Link>
                         </p>
                     </div>
                     {/*<div className={Style.profile_menu_one_item}>*/}

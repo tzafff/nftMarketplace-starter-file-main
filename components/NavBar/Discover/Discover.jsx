@@ -6,7 +6,7 @@ const Discover = ({ closeAllMenus }) => {
     const discover = [
         // { name: "Collection", link: "collection" },
         { name: "Search NFTs", link: "searchPage" },
-        { name: "Creator Profile", link: "author" },
+        { name: "Creator Profile", link: "creator" },
         // { name: "NFT Details", link: "nft-details" },
         { name: "Account Settings", link: "account" },
         { name: "Create NFT", link: "upload-nft" },

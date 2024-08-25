@@ -277,7 +277,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
         });
 
         await transaction.wait();
-        await router.push("/author")
+        await router.push("/creator")
     }
 
 
