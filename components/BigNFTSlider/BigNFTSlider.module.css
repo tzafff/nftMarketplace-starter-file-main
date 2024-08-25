@@ -119,6 +119,29 @@
     padding-block: 2rem 0rem;
 }
 
+.viewNFTContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Adjust the gap between the icon and text as needed */
+}
+
+.viewNFTContainer p {
+    margin: 0; /* Remove default margin */
+    font-size: 1rem;
+}
+
+.viewNFTContainer a {
+    display: flex;
+    align-items: flex-end; /* Adjusts the vertical alignment of the icon */
+}
+
+.viewNFTContainer .viewIcon {
+    margin-top: 1rem; /* Adjust this value to align the icon perfectly */
+    /* Or use padding-top if preferred */
+    /* padding-top: 0.2rem; */
+}
+
 .bigNFTSlider_box_left_sliderBtn{
     display: flex;
     align-items: center;

@@ -89,8 +89,7 @@ const AuthorProfileCard = ({account}) => {
                     </div>
 
                     <p>
-                        #Punk #4567 / an OG Cryptopunk Collector, hoarder of NFTs.
-                        Contributing to ether_cards, an NFT Monetization Platform.
+
                     </p>
 
                     <div className={Style.AuthorProfileCard_box_info_social}>

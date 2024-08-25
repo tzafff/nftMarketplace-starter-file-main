@@ -244,7 +244,7 @@ const NftDescription = ({ nft }) => {
 
                             {nft && nft.seller && nft.owner && currentAccount === nft.seller.toLowerCase() ? (
                                 <p>
-                                    You cannot buy your own NFT!
+                                    You already own this NFT!
                                 </p>
                             ) : nft && nft.owner && currentAccount === nft.owner.toLowerCase() ? (
                                 <Button

@@ -51,21 +51,21 @@ const NftCard = ({NFTData}) => {
                                     className={Style.NFTCard_box_update_left_like}
                                     onClick={() => likeNft()}
                                 >
-                                    {like ? (
-                                        <AiOutlineHeart />
-                                    ) : (
-                                        <AiFillHeart
-                                            className={Style.NFTCard_box_update_left_like_icon}
-                                        />
-                                    )}
-                                    {" "} 22
+                                    {/*{like ? (*/}
+                                    {/*    <AiOutlineHeart />*/}
+                                    {/*) : (*/}
+                                    {/*    <AiFillHeart*/}
+                                    {/*        className={Style.NFTCard_box_update_left_like_icon}*/}
+                                    {/*    />*/}
+                                    {/*)}*/}
+                                    {/*{" "} 22*/}
                                 </div>
                             </div>
 
                             <div className={Style.NFTCard_box_update_right}>
                                 <div className={Style.NFTCard_box_update_right_info}>
-                                    <small>Remaining Time</small>
-                                    <p>3h : 15m: 20s</p>
+                                    {/*<small>Remaining Time</small>*/}
+                                    {/*<p>3h : 15m: 20s</p>*/}
                                 </div>
                             </div>
                         </div>
