@@ -21,8 +21,8 @@ const Footer = () => {
             <div className={Style.footer_box}>
                 <div className={Style.footer_box_social}>
                     <Image src={images.logo} alt="footer logo" height={100} width={100}/>
-                    <p>The Worlds first and largest Digital Marketplace for crypto, collectibles and non-fungible tokens
-                    (NFTs). Buy, Sell and Discover all exclusive digital items.
+                    <p>Welcome to MetaMint – The Ultimate Destination for Digital Collectibles!
+                        Explore the Most Innovative Marketplace for NFTs.
                     </p>
 
                     <div className={Style.footer_social}>
@@ -56,12 +56,12 @@ const Footer = () => {
                 <div className={Style.subscribe}>
                     <h3>Subscribe</h3>
                     <div className={Style.subscribe_box}>
-                        <input type="email" placeholder="Enter your Email *"/>
+                        <input type="email" placeholder="Your Email Address"/>
                         <RiSendPlaneFill  className={Style.subscribe_box_send}/>
                     </div>
                     <div className={Style.subscribe_box_info}>
                         <p>
-                            Discover, collect and sell extraordinary NFTs OpenSea is the first and largest NFT MarketPlace
+                            Explore a World of Unique Digital Treasures and Uncover the Best in NFT Innovation
                         </p>
                     </div>
                 </div>

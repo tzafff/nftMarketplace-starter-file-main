@@ -11,6 +11,8 @@ import {
     TiSocialInstagram,
 } from "react-icons/ti";
 import {BiTransferAlt, BiDollar} from "react-icons/bi";
+import { RiAccountCircleFill } from "react-icons/ri";
+
 
 import Style from './NFTDescription.module.css'
 import images from '../../img'
@@ -157,24 +159,25 @@ const NftDescription = ({ nft }) => {
                     <h1>{nft.name} #{nft.tokenId}</h1>
                     <div className={Style.NftDescription_box_profile_box}>
                         <div className={Style.NftDescription_box_profile_box_left}>
-                            <Image
-                                src={images.user1}
-                                alt={"profile"}
-                                width={40}
-                                height={40}
-                                className={Style.NftDescription_box_profile_box_left_img}
-                            />
+                            <RiAccountCircleFill size={40}/>
+                            {/*<Image*/}
+                            {/*    src={images.zgcmq}*/}
+                            {/*    alt={"profile"}*/}
+                            {/*    width={40}*/}
+                            {/*    height={40}*/}
+                            {/*    className={Style.NftDescription_box_profile_box_left_img}*/}
+                            {/*/>*/}
 
                             <div className={Style.NftDescription_box_profile_left_info}>
                                 <small>Owner</small>
 
                                 <br/>
-                                <Link href={{pathname: '/author', query: `${nft.seller}`}}>
+                                {/*<Link href={{pathname: '/#', query: `${nft.seller}`}}>*/}
                                     <span>
                                         {`${nft.seller.slice(0, 5)}...${nft.seller.slice(-5)}`}
                                         <MdVerified/>
                                     </span>
-                                </Link>
+                                {/*</Link>*/}
                             </div>
                         </div>
 

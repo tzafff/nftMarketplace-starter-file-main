@@ -7,26 +7,27 @@ const Subscription = () => {
     const subscriptionArray = [
         {
             plan: "STARTER",
-            price: "5$/month",
+            price: "$5/month",
             popular: "Popular",
-            service: ["Automated Reporting", "Faster Processing", "Customizations"],
-            info: "Literally you probably havent heard of them jeans shorts"
+            service: ["Automated Reporting", "Faster Processing", "Basic Customizations"],
+            info: "An entry-level plan designed for individuals and small teams looking for essential features."
         },
         {
             plan: "BASIC",
-            price: "15$/month",
+            price: "$15/month",
             popular: "Most Popular",
             service: ["Priority Support", "Advanced Analytics", "Team Collaboration"],
-            info: "Elevate your productivity with our Pro plan, designed for growing teams"
+            info: "A well-rounded plan that enhances productivity with advanced features and team support."
         },
         {
             plan: "PRO",
-            price: "30$/month",
-            popular: "BEST DEAL",
+            price: "$30/month",
+            popular: "Best Value",
             service: ["Dedicated Account Manager", "Unlimited Customizations", "24/7 Support"],
-            info: "Tailored solutions for large organizations with complex needs"
+            info: "A premium plan offering extensive features and personalized support for larger organizations."
         }
-    ]
+    ];
+
 
     return (
         <div className={Style.subscription}>

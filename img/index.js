@@ -47,11 +47,33 @@ import metamask from './metamask.png'
 import walletconnect from './walletconnect.png'
 import coinbase from './coibase.webp'
 import loader from './loader.gif'
-import error from './error.jpg'
 import error2 from './error2.png'
+import rap7 from './7.png'
+import rap8 from './8.png'
+import rap9 from './9.png'
+import rap10 from './10.png'
+import rap11 from './11.png'
+import rapper2 from './rapper2.png'
+import rapper3 from './rapper3.png'
+import rapper4 from './rapper4.png'
+import rapper5 from './rapper5.png'
+import rapper6 from './rapper6.png'
+
+
+
 
 export default {
+  rap7,
+  rap8,
+  rap9,
+  rap10,
+  rap11,
   error2,
+  rapper2,
+  rapper3,
+  rapper4,
+  rapper5,
+  rapper6,
   loader,
   coinbase,
   walletconnect,

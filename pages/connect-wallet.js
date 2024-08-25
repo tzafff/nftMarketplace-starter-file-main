@@ -11,15 +11,7 @@ const ConnectWallet = () => {
     const providerArray = [
         {
             provider: images.metamask,
-            name: "Metamask"
-        },
-        {
-            provider: images.walletconnect,
-            name: "Wallet Connect"
-        },
-        {
-            provider: images.coinbase,
-            name: "CoinBase Wallet"
+            name: "MetaMask"
         },
     ]
 
@@ -29,9 +21,9 @@ const ConnectWallet = () => {
         <div className={Style.connectWallet}>
             <div className={Style.connectWallet_box}>
                 <h1>Connect your Wallet</h1>
-                <p className={Style.connectWallet_box_para}>
-                    Connect with one of our available wallet providers or create a new one
-                </p>
+                {/*<p className={Style.connectWallet_box_para}>*/}
+                {/*    Connect with one of our available wallet providers or create a new one*/}
+                {/*</p>*/}
 
                 <div className={Style.connectWallet_box_provider}>
                     {providerArray.map((el, i) => (

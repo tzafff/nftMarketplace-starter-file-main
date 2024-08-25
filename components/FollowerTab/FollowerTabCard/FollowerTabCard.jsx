@@ -1,32 +1,33 @@
-import React,{ useState } from 'react'
-import Image from "next/image";
-import {MdVerified} from "react-icons/md";
-import {TiTick} from "react-icons/ti";
-import images from '../../../img'
-import Style from './FollowerTabCard.module.css'
-const FollowerTabCard = ({i, el}) => {
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { MdVerified } from 'react-icons/md';
+import { TiTick } from 'react-icons/ti';
+import { RiAccountCircleFill } from 'react-icons/ri';
+import images from '../../../img'; // Importing the images object
+import Style from './FollowerTabCard.module.css';
 
+const FollowerTabCard = ({ i, el }) => {
     const [following, setFollowing] = useState(false);
+
     const followMe = () => {
-        if(!following){
-            setFollowing(true)
-        } else {
-            setFollowing(false)
-        }
-    }
+        setFollowing(!following);
+    };
+
+    // Dynamically select background image based on index
+    const backgroundImage = images[`creatorbackground${i + 1}`] || images.creatorbackground1;
 
     return (
         <div className={Style.FollowerTabCard}>
             <div className={Style.FollowerTabCard_rank}>
                 <p>
-                    #{ i + 1 } <span>🥇</span>
+                    #{i + 1} <span>🥇</span>
                 </p>
             </div>
 
             <div className={Style.FollowerTabCard_box}>
                 <div className={Style.FollowerTabCard_box_img}>
                     <Image
-                        src={el.background || images.creatorbackground1}
+                        src={backgroundImage}
                         alt="profile bg"
                         width={500}
                         height={300}
@@ -41,7 +42,7 @@ const FollowerTabCard = ({i, el}) => {
                         alt="profile pic"
                         width={50}
                         height={50}
-                        src={el.user || images.user1}
+                        src={el.user || images.zgcmq} // Default to user1 if el.user is undefined
                     />
                 </div>
 
@@ -50,7 +51,7 @@ const FollowerTabCard = ({i, el}) => {
                         <h4>
                             {`${el.seller.slice(0, 5)}...${el.seller.slice(-5)}`}{" "}
                             <span>
-                                <MdVerified/>
+                                <MdVerified />
                             </span>
                         </h4>
                         <p>{el.total || 0} ETH</p>
@@ -58,14 +59,14 @@ const FollowerTabCard = ({i, el}) => {
 
                     <div className={Style.FollowerTabCard_box_info_following}>
                         {following ? (
-                            <a onClick={() => followMe()}>
+                            <a onClick={followMe}>
                                 Follow{" "}
                                 <span>
-                                    <TiTick/>
+                                    <TiTick />
                                 </span>
                             </a>
                         ) : (
-                            <a onClick={() => followMe()}>
+                            <a onClick={followMe}>
                                 Following
                             </a>
                         )}
@@ -73,6 +74,7 @@ const FollowerTabCard = ({i, el}) => {
                 </div>
             </div>
         </div>
-    )
-}
-export default FollowerTabCard
+    );
+};
+
+export default FollowerTabCard;

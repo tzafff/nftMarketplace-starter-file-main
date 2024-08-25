@@ -5,6 +5,7 @@ import {MdHelpCenter} from "react-icons/md";
 import {TbDownloadOff, TbDownload} from "react-icons/tb";
 import { FcAbout } from "react-icons/fc";
 import Link from 'next/link'
+import { FaWallet } from "react-icons/fa";
 
 import Style from './Profile.module.css'
 import images from '../../../img'
@@ -15,13 +16,14 @@ const Profile = ({currentAccount}) => {
     return (
         <div className={Style.profile}>
             <div className={Style.profile_account}>
-                <Image
-                    src={images.user1}
-                    alt="user profile"
-                    width={50}
-                    height={50}
-                    className={Style.profile_account_img}
-                />
+                <FaWallet/>
+                {/*<Image*/}
+                {/*    src={images.rapper4}*/}
+                {/*    alt="user profile"*/}
+                {/*    width={50}*/}
+                {/*    height={50}*/}
+                {/*    className={Style.profile_account_img}*/}
+                {/*/>*/}
 
                 <div className={Style.profile_account_info}>
                     <p>{" "}  </p>

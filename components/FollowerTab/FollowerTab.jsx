@@ -48,23 +48,23 @@ const FollowerTab = ({TopCreator}) => {
     const FollowingArray = [
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.zgcmq,
         },
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.zgcmq,
         },
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.zgcmq,
         },
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.zgcmq,
         },
         {
             background: images.creatorbackground5,
-            user: images.user5,
+            user: images.zgcmq,
         },
         {
             background: images.creatorbackground6,
@@ -138,7 +138,7 @@ const FollowerTab = ({TopCreator}) => {
     return (
         <div className={Style.followerTab}>
             <div className={Style.followerTab_title}>
-                <h2>Top Creators List...</h2>
+                <h2>Top Creators </h2>
                 {/*<div className={Style.followerTab_tabs}>*/}
                 {/*    <div className={Style.followerTab_tabs_btn}>*/}
                 {/*        <button onClick={()=> openPopular()}>*/}
@@ -162,21 +162,21 @@ const FollowerTab = ({TopCreator}) => {
                 </div>
             )}
 
-            {following && (
-                <div className={Style.followerTab_box}>
-                    {FollowingArray.map((el, i) =>(
-                        <FollowerTabCard key={i+1} i={i} el={el}/>
-                    ))}
-                </div>
-            )}
+            {/*{following && (*/}
+            {/*    <div className={Style.followerTab_box}>*/}
+            {/*        {FollowingArray.map((el, i) =>(*/}
+            {/*            <FollowerTabCard key={i+1} i={i} el={el}/>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*)}*/}
 
-            {news && (
-                <div className={Style.followerTab_box}>
-                    {NewsArray.map((el, i) =>(
-                        <FollowerTabCard key={i+1} i={i} el={el}/>
-                    ))}
-                </div>
-            )}
+            {/*{news && (*/}
+            {/*    <div className={Style.followerTab_box}>*/}
+            {/*        {NewsArray.map((el, i) =>(*/}
+            {/*            <FollowerTabCard key={i+1} i={i} el={el}/>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*)}*/}
 
             <div className={Style.followerTab_member}>
                 <div className={Style.followerTab_member_box}>
@@ -185,7 +185,7 @@ const FollowerTab = ({TopCreator}) => {
                     </Link>
 
                     <Link href="/upload-nft">
-                        <a>Become, a Creator</a>
+                        <a>Become, a Creator!</a>
                     </Link>
                 </div>
             </div>

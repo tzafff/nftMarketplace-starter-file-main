@@ -59,9 +59,9 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
     return (
         <div className={Style.upload}>
             <DropZone
-                title="JPG, PNG, WEBM, MAX100MB"
-                heading="Drag & drop file"
-                subHeading="or Browse media on your device"
+                title="JPG, PNG, WEBM (Max 100MB)"
+                heading="Drag & Drop Your File Here"
+                subHeading="Or Browse Media on Your Device"
                 name={name}
                 website={website}
                 description={description}
@@ -75,10 +75,10 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
 
             <div className={Style.upload_box}>
                 <div className={formStyle.Form_box_input}>
-                    <label htmlFor="nft">Item Name</label>
+                    <label htmlFor="nft">NFT Name</label>
                     <input
                         type={"text"}
-                        placeholder={"Item Name"}
+                        placeholder="NFT Name"
                         className={formStyle.Form_box_input_userName}
                         onChange={(e) => setName(e.target.value)}
                     />
@@ -92,14 +92,13 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                         </div>
                         <input
                             type={"text"}
-                            placeholder={"Your Website"}
+                            placeholder={"Enter Your Website"}
                             onChange={(e) => setWebsite(e.target.value)}
                         />
                     </div>
 
                     <p className={Style.upload_box_input_para}>
-                        Ciscryp will include a link to this URL on this items detail page so users can
-                        click to learn more about it. You are welcome to link to your own website with more details
+                        Add a link to your website for more details about this item. Users can click through to learn more.
                     </p>
 
                 </div>
@@ -111,14 +110,13 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                         id={""}
                         cols="30"
                         rows="6"
-                        placeholder={"Something about yourself."}
+                        placeholder="Describe the NFT."
                         onChange={(e) => setDescription(e.target.value)}
                     >
 
                     </textarea>
                     <p>
-                        The description will be included on the items detail page underneath its image.
-                        Markdown syntax is supported
+                        The description will be included on the NFTs detail page, displayed underneath its image. Markdown syntax is supported.
                     </p>
                 </div>
 
@@ -193,7 +191,7 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                             </div>
                             <input
                                 type={"text"}
-                                placeholder={"Properties"}
+                                placeholder="NFT Properties"
                                 onChange={(e) => setProperties(e.target.value)}
                             />
                         </div>
@@ -207,7 +205,7 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                             </div>
                             <input
                                 type={"text"}
-                                placeholder={"Price"}
+                                placeholder="1 ETH"
                                 onChange={(e) => setPrice(e.target.value)}
                             />
                         </div>

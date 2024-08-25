@@ -11,7 +11,7 @@ const Discover = ({ closeAllMenus }) => {
         { name: "Account Settings", link: "account" },
         { name: "Create NFT", link: "upload-nft" },
         { name: "Connect Wallet", link: "connect-wallet" },
-        { name: "Blog", link: "blog" },
+        { name: "Blog3", link: "https://tzaff-blog3.vercel.app/" },
     ];
 
     return (

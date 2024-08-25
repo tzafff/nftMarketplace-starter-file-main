@@ -6,6 +6,7 @@ import {Button} from '../index'
 import images from '../../img'
 
 import {NFTMarketPlaceContext} from '../../Context/NFTMarketPlaceContext'
+import Link from "next/link";
 
 const HeroSection = () => {
 
@@ -16,10 +17,10 @@ const HeroSection = () => {
                 <div className={Style.heroSection_box_left}>
                     <h1>{titleData} 🖼️</h1>
                     <p>
-                        Discover the most outstanding NFTs in all topics
-                        and sell them
+                        Explore and trade unique NFTs across all your favorite categories.
                     </p>
-                    <Button btnName="Start your Search"/>
+                    {/*<Button btnName="Start Exploring Now" link={"/searchPage"}/>*/}
+                    <Button btnName="Start Exploring Now" handleClick={() => { }} link="/searchPage" />
                 </div>
                 <div className={Style.heroSection_box_right}>
                     <Image src={images.hero} alt="hero section" width={600} height={600} />

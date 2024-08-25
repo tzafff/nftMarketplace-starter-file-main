@@ -25,7 +25,7 @@ const Account = () => {
             <div className={Style.account_info}>
                 <h1>Profile Settings</h1>
                 <p>
-                    You can set preferred display name, create your profile URL and manage other personal settings.
+                    Set a Preferred Display Name, Create a Unique Profile URL, and Manage Your Personal Settings with Ease.
                 </p>
             </div>
 

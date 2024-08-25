@@ -1,1 +1,9 @@
-<svg class="text-white dark:text-neutral-900 w-64 md:w-[281px]" width="281" viewBox="0 0 281 99" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0V99H258.059C248.54 99 239.92 93.3743 236.089 84.6606L205.167 14.3394C201.335 5.62568 192.716 0 183.197 0H0Z" fill="currentColor"></path></svg>
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width="24"
+        height="24"
+>
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6v1h12v-1c0-3.31-2.69-6-6-6z" />
+</svg>

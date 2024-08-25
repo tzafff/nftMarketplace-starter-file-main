@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
+import { RiAccountCircleFill } from "react-icons/ri";
 
 import Style from './NavBar.module.css';
 import { Discover, HelpCenter, Notification, Profile, SideBar } from './index';
@@ -126,14 +127,15 @@ const NavBar = () => {
 
                     <div className={Style.navbar_container_right_profile_box}>
                         <div className={Style.navbar_container_right_profile}>
-                            <Image
-                                src={images.user1}
-                                alt="Profile"
-                                width={40}
-                                height={40}
-                                onClick={(e) => openProfile()}
-                                className={Style.navbar_container_right_profile}
-                            />
+                            <RiAccountCircleFill size={40} onClick={(e) => openProfile()}/>
+                            {/*<Image*/}
+                            {/*    src={images.user1}*/}
+                            {/*    alt="Profile"*/}
+                            {/*    width={40}*/}
+                            {/*    height={40}*/}
+                            {/*    onClick={(e) => openProfile()}*/}
+                            {/*    className={Style.navbar_container_right_profile}*/}
+                            {/*/>*/}
                             {profile && <Profile currentAccount={currentAccount} />}
                         </div>
                     </div>

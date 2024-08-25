@@ -53,7 +53,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         },
         {
             name: "Blog",
-            link: "blog"
+            link: "https://tzaff-blog3.vercel.app/"
         },
     ]
 
