@@ -14,6 +14,10 @@
     gap: 3rem;
 }
 
+.footer_box_social img{
+    border-radius: 50%;
+}
+
 /*SOCIAL*/
 .footer_social{
     display: flex;

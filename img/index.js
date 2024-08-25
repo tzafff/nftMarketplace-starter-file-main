@@ -58,11 +58,13 @@ import rapper3 from './rapper3.png'
 import rapper4 from './rapper4.png'
 import rapper5 from './rapper5.png'
 import rapper6 from './rapper6.png'
+import logo2 from './logo2.png'
 
 
 
 
 export default {
+  logo2,
   rap7,
   rap8,
   rap9,

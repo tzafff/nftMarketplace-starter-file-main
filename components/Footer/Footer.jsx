@@ -20,7 +20,7 @@ const Footer = () => {
         <div className={Style.footer}>
             <div className={Style.footer_box}>
                 <div className={Style.footer_box_social}>
-                    <Image src={images.logo} alt="footer logo" height={100} width={100}/>
+                    <Image src={images.logo2} alt="footer logo" height={100} width={100}/>
                     <p>Welcome to MetaMint – The Ultimate Destination for Digital Collectibles!
                         Explore the Most Innovative Marketplace for NFTs.
                     </p>

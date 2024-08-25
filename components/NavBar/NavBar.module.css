@@ -4,6 +4,14 @@
     position: relative;
     z-index: 111111111;
 }
+.logo {
+    border-radius: 50%; /* Makes the logo rounded */
+    overflow: hidden;   /* Ensures that the image does not overflow the border-radius */
+    width: 65px;        /* Adjust width as needed */
+    height: 65px;       /* Adjust height as needed */
+}
+
+
 
 .navbar_container {
     width: 80%;

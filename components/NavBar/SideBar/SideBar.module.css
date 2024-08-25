@@ -4,6 +4,10 @@
     background-color: var(--main-bg-color);
 }
 
+.sideBar_box img{
+    border-radius: 50%;
+}
+
 .sideBar_closeBtn{
     position: absolute;
     top: 3rem;
@@ -18,6 +22,7 @@
 }
 
 .sideBar_box p{
+    padding-top: 2rem;
     margin-top: -2rem;
 }
 
