@@ -104,51 +104,51 @@ const NftDescription = ({ nft }) => {
             <div className={Style.NftDescription_box}>
                 {/*    PART ONE*/}
                 <div className={Style.NftDescription_box_share}>
-                    <p>Virtual Worlds</p>
+                    {/*<p>Virtual Worlds</p>*/}
                     <div className={Style.NftDescription_box_share_box}>
-                        <MdCloudUpload
-                            className={Style.NftDescription_box_share_box_icon}
-                            onClick={() => openSocial()}
-                        />
+                        {/*<MdCloudUpload*/}
+                        {/*    className={Style.NftDescription_box_share_box_icon}*/}
+                        {/*    onClick={() => openSocial()}*/}
+                        {/*/>*/}
 
-                        {social && (
-                            <div className={Style.NftDescription_box_share_box_social}>
-                                <a href="#">
-                                    <TiSocialFacebook/> FaceBook
-                                </a>
-                                <a href="#">
-                                    <TiSocialTwitter/> Twitter
-                                </a>
-                                <a href="#">
-                                    <TiSocialYoutube/> Youtube
-                                </a>
-                                <a href="#">
-                                    <TiSocialInstagram/> Instagram
-                                </a>
-                            </div>
-                        )}
+                        {/*{social && (*/}
+                        {/*    <div className={Style.NftDescription_box_share_box_social}>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <TiSocialFacebook/> FaceBook*/}
+                        {/*        </a>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <TiSocialTwitter/> Twitter*/}
+                        {/*        </a>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <TiSocialYoutube/> Youtube*/}
+                        {/*        </a>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <TiSocialInstagram/> Instagram*/}
+                        {/*        </a>*/}
+                        {/*    </div>*/}
+                        {/*)}*/}
 
-                        <BsThreeDots
-                            className={Style.NftDescription_box_share_box_icon}
-                            onClick={() => openMenu()}
-                        />
+                        {/*<BsThreeDots*/}
+                        {/*    className={Style.NftDescription_box_share_box_icon}*/}
+                        {/*    onClick={() => openMenu()}*/}
+                        {/*/>*/}
 
-                        {NFTMenu && (
-                            <div className={Style.NftDescription_box_share_box_social}>
-                                <a href="#">
-                                    <BiDollar/> Change Price
-                                </a>
-                                <a href="#">
-                                    <BiTransferAlt/> Transfer
-                                </a>
-                                <a href="#">
-                                    <MdReportProblem/> Report
-                                </a>
-                                <a href="#">
-                                    <MdOutlineDeleteSweep/> Delete Item
-                                </a>
-                            </div>
-                        )}
+                        {/*{NFTMenu && (*/}
+                        {/*    <div className={Style.NftDescription_box_share_box_social}>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <BiDollar/> Change Price*/}
+                        {/*        </a>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <BiTransferAlt/> Transfer*/}
+                        {/*        </a>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <MdReportProblem/> Report*/}
+                        {/*        </a>*/}
+                        {/*        <a href="#">*/}
+                        {/*            <MdOutlineDeleteSweep/> Delete Item*/}
+                        {/*        </a>*/}
+                        {/*    </div>*/}
+                        {/*)}*/}
                     </div>
                 </div>
 
@@ -166,76 +166,75 @@ const NftDescription = ({ nft }) => {
                             />
 
                             <div className={Style.NftDescription_box_profile_left_info}>
-                                <small>Creator</small>
+                                <small>Owner</small>
 
                                 <br/>
                                 <Link href={{pathname: '/author', query: `${nft.seller}`}}>
                                     <span>
-                                        Chris Tzaff
+                                        {`${nft.seller.slice(0, 5)}...${nft.seller.slice(-5)}`}
                                         <MdVerified/>
                                     </span>
                                 </Link>
                             </div>
                         </div>
 
-                        <div className={Style.NftDescription_box_profile_box_right}>
-                            <Image
-                                src={images.creatorbackground1}
-                                alt={"profile"}
-                                width={40}
-                                height={40}
-                                className={Style.NftDescription_box_profile_box_left_img}
-                            />
+                        {/*<div className={Style.NftDescription_box_profile_box_right}>*/}
+                        {/*    <Image*/}
+                        {/*        src={images.creatorbackground1}*/}
+                        {/*        alt={"profile"}*/}
+                        {/*        width={40}*/}
+                        {/*        height={40}*/}
+                        {/*        className={Style.NftDescription_box_profile_box_left_img}*/}
+                        {/*    />*/}
 
-                            <div className={Style.NftDescription_box_profile_box_right_info}>
-                                <small>Collection</small>
-                                <br/>
-                                <span>
-                                   LIL UZI
-                                    <MdVerified/>
-                                </span>
-                            </div>
-                        </div>
+                        {/*    <div className={Style.NftDescription_box_profile_box_right_info}>*/}
+                        {/*        <small>Collection</small>*/}
+                        {/*        <br/>*/}
+                        {/*        <span>*/}
+                        {/*           LIL UZI*/}
+                        {/*            <MdVerified/>*/}
+                        {/*        </span>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
 
 
                     <div className={Style.NftDescription_box_profile_biding}>
-                        <p>
-                            <MdTimer/>
-                            <span>
-                            Auction ending in:
-                        </span>
-                        </p>
+                        {/*<p>*/}
+                        {/*    <MdTimer/>*/}
+                        {/*    <span>*/}
+                        {/*    Auction ending in:*/}
+                        {/*</span>*/}
+                        {/*</p>*/}
 
-                        <div className={Style.NftDescription_box_profile_biding_box_timer}>
-                            <div className={Style.NftDescription_box_profile_biding_box_timer_item}>
-                                <p>2</p>
-                                <span>Days</span>
-                            </div>
-                            <div className={Style.NftDescription_box_profile_biding_box_timer_item}>
-                                <p>22</p>
-                                <span>Hours</span>
-                            </div>
-                            <div className={Style.NftDescription_box_profile_biding_box_timer_item}>
-                                <p>45</p>
-                                <span>Minutes</span>
-                            </div>
-                            <div className={Style.NftDescription_box_profile_biding_box_timer_item}>
-                                <p>12</p>
-                                <span>Seconds</span>
-                            </div>
-                        </div>
+                        {/*<div className={Style.NftDescription_box_profile_biding_box_timer}>*/}
+                        {/*    <div className={Style.NftDescription_box_profile_biding_box_timer_item}>*/}
+                        {/*        <p>2</p>*/}
+                        {/*        <span>Days</span>*/}
+                        {/*    </div>*/}
+                        {/*    <div className={Style.NftDescription_box_profile_biding_box_timer_item}>*/}
+                        {/*        <p>22</p>*/}
+                        {/*        <span>Hours</span>*/}
+                        {/*    </div>*/}
+                        {/*    <div className={Style.NftDescription_box_profile_biding_box_timer_item}>*/}
+                        {/*        <p>45</p>*/}
+                        {/*        <span>Minutes</span>*/}
+                        {/*    </div>*/}
+                        {/*    <div className={Style.NftDescription_box_profile_biding_box_timer_item}>*/}
+                        {/*        <p>12</p>*/}
+                        {/*        <span>Seconds</span>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
 
                         <div className={Style.NftDescription_box_profile_biding_box_price}>
                             <div className={Style.NftDescription_box_profile_bidding_box_price_bid}>
-                                <small>Current Bid</small>
+                                <small>Current Price</small>
                                 <p>
                                     {nft.price} ETH
-                                    <span>(≈ $3,221.22)</span>
                                 </p>
                             </div>
 
-                            <span>[96 in stock]</span>
+                            {/*<span>[96 in stock]</span>*/}
                         </div>
 
                         <div className={Style.NftDescription_box_biding_box_button}>
@@ -262,36 +261,34 @@ const NftDescription = ({ nft }) => {
 
 
 
-                            <Button
-                                icon=<FaPercentage/>
-                                btnName={"Make offer"}
-                                handleClick={() => {
-                                }}
-                                classStyle={Style.button}
-                            />
+                            {/*<Button*/}
+                            {/*    icon=<FaPercentage/>*/}
+                            {/*    btnName={"Make offer"}*/}
+                            {/*    handleClick={() => {*/}
+                            {/*    }}*/}
+                            {/*    classStyle={Style.button}*/}
+                            {/*/>*/}
                         </div>
 
                         <div className={Style.NftDescription_box_profile_biding_box_tabs}>
-                            <button onClick={(e) => openTabs(e)}>Bid History</button>
-                            <button onClick={(e) => openTabs(e)}>Provenance</button>
-                            <button onClick={(e) => openOwner()}>Owner</button>
+                            {/*<button onClick={(e) => openTabs(e)}>Bid History</button>*/}
+                            {/*<button onClick={(e) => openTabs(e)}>Provenance</button>*/}
+                            <button >Current Owner</button>
                         </div>
 
-                        {history && (
-                            <div className={Style.NftDescription_box_profile_biding_box_card}>
-                                <NFTTabs dataTab={historyArray}/>
-                            </div>
-                        )}
-                        {provenance && (
-                            <div className={Style.NftDescription_box_profile_biding_box_card}>
-                                <NFTTabs dataTab={provenanceArray}/>
-                            </div>
-                        )}
-                        {owner && (
-                            <div className={Style.NftDescription_box_profile_biding_box_card}>
-                                <NFTTabs dataTab={ownerArray} icon=<MdVerified/>/>
-                            </div>
-                        )}
+                        {/*{history && (*/}
+                        {/*    <div className={Style.NftDescription_box_profile_biding_box_card}>*/}
+                        {/*        <NFTTabs dataTab={historyArray}/>*/}
+                        {/*    </div>*/}
+                        {/*)}*/}
+                        {/*{provenance && (*/}
+                        {/*    <div className={Style.NftDescription_box_profile_biding_box_card}>*/}
+                        {/*        <NFTTabs dataTab={provenanceArray}/>*/}
+                        {/*    </div>*/}
+                        {/*)}*/}
+                        <p>
+                            {nft.seller}
+                        </p>
                     </div>
                 </div>
             </div>

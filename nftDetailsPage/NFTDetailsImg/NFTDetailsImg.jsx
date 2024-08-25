@@ -91,16 +91,16 @@ const NftDetailsImg = ({ nft }) => {
 
                 {details && (
                     <div className={Style.NftDetailsImg_box_details_box}>
-                        <small>2000 x 2000 px.IMAGE(685KB)</small>
+                        {/*<small>2000 x 2000 px.IMAGE(685KB)</small>*/}
                         <p>
-                            <small>Seller</small>
+                            <small>Current Owner</small>
                             <br></br>
                             {nft.seller}
                         </p>
-                        <p>
-                            <small>Token ID:</small>
-                            &nbsp; {nft.tokenId}
-                        </p>
+                        {/*<p>*/}
+                        {/*    <small>Token ID:</small>*/}
+                        {/*    &nbsp; {nft.tokenId}*/}
+                        {/*</p>*/}
                     </div>
                 )}
 

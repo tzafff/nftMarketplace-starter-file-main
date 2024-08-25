@@ -24,7 +24,7 @@ const Profile = ({currentAccount}) => {
                 />
 
                 <div className={Style.profile_account_info}>
-                    <p>Tzaff </p>
+                    <p>{" "}  </p>
                     <small>{`${currentAccount.slice(0, 5)}...${currentAccount.slice(-5)}`}</small>
                 </div>
             </div>
@@ -52,14 +52,14 @@ const Profile = ({currentAccount}) => {
                 </div>
 
                 <div className={Style.profile_menu_two}>
+                    {/*<div className={Style.profile_menu_one_item}>*/}
+                    {/*    <MdHelpCenter/>*/}
+                    {/*    <p>*/}
+                    {/*        <Link href={{pathname: '/contact-us'}}>Help</Link>*/}
+                    {/*    </p>*/}
+                    {/*</div>*/}
                     <div className={Style.profile_menu_one_item}>
                         <MdHelpCenter/>
-                        <p>
-                            <Link href={{pathname: '/contact-us'}}>Help</Link>
-                        </p>
-                    </div>
-                    <div className={Style.profile_menu_one_item}>
-                        <FcAbout/>
                         <p>
                             <Link href={{pathname: '/about-us'}}>About Us</Link>
                         </p>

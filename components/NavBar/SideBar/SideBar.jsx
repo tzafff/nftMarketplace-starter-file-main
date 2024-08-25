@@ -23,28 +23,28 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
 
     // DISCOVER NAVIGATION MENU
     const discover = [
+        // {
+        //     name: "Collection",
+        //     link: "collection",
+        // },
         {
-            name: "Collection",
-            link: "collection",
-        },
-        {
-            name: "Search",
+            name: "Search NFTs",
             link: "searchPage"
         },
         {
-            name: "Author Profile",
+            name: "Creator Profile",
             link: "author"
         },
-        {
-            name: "NFT Details",
-            link: "nft-details"
-        },
+        // {
+        //     name: "NFT Details",
+        //     link: "nft-details"
+        // },
         {
             name: "Account Settings",
             link: "account"
         },
         {
-            name: "Upload NFT",
+            name: "Create NFT",
             link: "upload-nft"
         },
         {
@@ -67,14 +67,14 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
             name: "Contact us",
             link: "contact-us"
         },
-        {
-            name: "Sign Up",
-            link: "sign-up"
-        },
-        {
-            name: "Sign in",
-            link: "sign-in"
-        },
+        // {
+        //     name: "Sign Up",
+        //     link: "sign-up"
+        // },
+        // {
+        //     name: "Sign in",
+        //     link: "sign-in"
+        // },
         {
             name: "Subscription",
             link: "subscription"

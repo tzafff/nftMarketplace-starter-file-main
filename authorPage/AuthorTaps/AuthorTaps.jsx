@@ -83,51 +83,51 @@ const AuthorTaps = ({ setCollectibles, setCreated, setLike, setFollower, setFoll
                         >
                             Owned{""}
                         </button>
-                        <button
-                            onClick={(e) => openTab(e)}
-                            className={`${activeBtn === 3 ? Style.active : ""}`}
-                        >
-                            Liked{""}
-                        </button>
-                        <button
-                            onClick={(e) => openTab(e)}
-                            className={`${activeBtn === 4 ? Style.active : ""}`}
-                        >
-                            Following{""}
-                        </button>
-                        <button
-                            onClick={(e) => openTab(e)}
-                            className={`${activeBtn === 5 ? Style.active : ""}`}
-                        >
-                            Followers{""}
-                        </button>
+                        {/*<button*/}
+                        {/*    onClick={(e) => openTab(e)}*/}
+                        {/*    className={`${activeBtn === 3 ? Style.active : ""}`}*/}
+                        {/*>*/}
+                        {/*    Liked{""}*/}
+                        {/*</button>*/}
+                        {/*<button*/}
+                        {/*    onClick={(e) => openTab(e)}*/}
+                        {/*    className={`${activeBtn === 4 ? Style.active : ""}`}*/}
+                        {/*>*/}
+                        {/*    Following{""}*/}
+                        {/*</button>*/}
+                        {/*<button*/}
+                        {/*    onClick={(e) => openTab(e)}*/}
+                        {/*    className={`${activeBtn === 5 ? Style.active : ""}`}*/}
+                        {/*>*/}
+                        {/*    Followers{""}*/}
+                        {/*</button>*/}
                     </div>
                 </div>
 
-                <div className={Style.AuthorTaps_box_right}>
-                    <div
-                        className={Style.AuthorTaps_box_right_para}
-                        onClick={() => openDropDownList()}
-                    >
-                        <p>{selectedMenu}</p>
-                        {openList ? <TiArrowSortedUp/> : <TiArrowSortedDown/>}
-                    </div>
+                {/*<div className={Style.AuthorTaps_box_right}>*/}
+                {/*    <div*/}
+                {/*        className={Style.AuthorTaps_box_right_para}*/}
+                {/*        onClick={() => openDropDownList()}*/}
+                {/*    >*/}
+                {/*        <p>{selectedMenu}</p>*/}
+                {/*        {openList ? <TiArrowSortedUp/> : <TiArrowSortedDown/>}*/}
+                {/*    </div>*/}
 
-                    {openList && (
-                        <div className={Style.AuthorTaps_box_right_list}>
-                            {listArray.map((el, i) => (
-                                <div
-                                    key={i + 1}
-                                    onClick={() => setSelectedMenu(el)}
-                                    className={Style.AuthorTaps_box_right_list_item}
-                                >
-                                    <p>{el}</p>
-                                    <span>{selectedMenu === el && <TiTick/>}</span>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                {/*    {openList && (*/}
+                {/*        <div className={Style.AuthorTaps_box_right_list}>*/}
+                {/*            {listArray.map((el, i) => (*/}
+                {/*                <div*/}
+                {/*                    key={i + 1}*/}
+                {/*                    onClick={() => setSelectedMenu(el)}*/}
+                {/*                    className={Style.AuthorTaps_box_right_list_item}*/}
+                {/*                >*/}
+                {/*                    <p>{el}</p>*/}
+                {/*                    <span>{selectedMenu === el && <TiTick/>}</span>*/}
+                {/*                </div>*/}
+                {/*            ))}*/}
+                {/*        </div>*/}
+                {/*    )}*/}
+                {/*</div>*/}
             </div>
         </div>
     )

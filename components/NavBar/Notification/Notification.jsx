@@ -13,9 +13,8 @@ const Notification = () => {
                     <Image src={images.user1} alt="profile image" width={50} height={50}/>
                 </div>
                 <div className={Style.notification_box_info}>
-                    <h4>Chris Tzaff</h4>
-                    <p>Measure action tour user...</p>
-                    <small>3 minutes ago.</small>
+                    <h4>System</h4>
+                    <p>No notifications...</p>
                 </div>
                 <span className={Style.notification_box_new}></span>
             </div>

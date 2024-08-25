@@ -13,14 +13,14 @@ const HelpCenter = ({closeAllMenus}) => {
             name: "Contact us",
             link: "contact-us"
         },
-        {
-            name: "Sign Up",
-            link: "sign-up"
-        },
-        {
-            name: "Sign in",
-            link: "sign-in"
-        },
+        // {
+        //     name: "Sign Up",
+        //     link: "sign-up"
+        // },
+        // {
+        //     name: "Sign in",
+        //     link: "sign-in"
+        // },
         {
             name: "Subscription",
             link: "subscription"

@@ -11,6 +11,8 @@ import images from '../img'
 import {Button} from '../components/index'
 import {DropZone} from "../uploadNFT/index";
 import {useRouter} from "next/router";
+import { FaDollarSign } from "react-icons/fa6";
+
 
 const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
     const [price, setPrice] = useState("");
@@ -120,40 +122,40 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                     </p>
                 </div>
 
-                <div className={formStyle.Form_box_input}>
-                    <label htmlFor={"name"}>
-                        Choose Collection
-                    </label>
-                    <p className={Style.upload_box_input_para}>
-                        Choose an existing or create a new one.
-                    </p>
-                    <div className={Style.upload_box_slider_div}>
-                        {categoryArray.map((el, i) => (
-                            <div
-                                className={`${Style.upload_box_slider} ${active === i + 1 ? Style.active : ""}` }
-                                key={i+1}
-                                onClick={() => (setActive(i + 1), setCategory(el.category))}
-                            >
-                                <div className={Style.upload_box_slider_box}>
-                                    <div className={Style.upload_box_slider_box_img}>
-                                        <Image
-                                            src={el.image}
-                                            alt={"bg image"}
-                                            width={70}
-                                            height={70}
-                                            className={Style.upload_box_slider_box_img_img}
-                                        />
-                                    </div>
+                {/*<div className={formStyle.Form_box_input}>*/}
+                {/*    <label htmlFor={"name"}>*/}
+                {/*        Choose Collection*/}
+                {/*    </label>*/}
+                {/*    <p className={Style.upload_box_input_para}>*/}
+                {/*        Choose an existing or create a new one.*/}
+                {/*    </p>*/}
+                {/*    <div className={Style.upload_box_slider_div}>*/}
+                {/*        {categoryArray.map((el, i) => (*/}
+                {/*            <div*/}
+                {/*                className={`${Style.upload_box_slider} ${active === i + 1 ? Style.active : ""}` }*/}
+                {/*                key={i+1}*/}
+                {/*                onClick={() => (setActive(i + 1), setCategory(el.category))}*/}
+                {/*            >*/}
+                {/*                <div className={Style.upload_box_slider_box}>*/}
+                {/*                    <div className={Style.upload_box_slider_box_img}>*/}
+                {/*                        <Image*/}
+                {/*                            src={el.image}*/}
+                {/*                            alt={"bg image"}*/}
+                {/*                            width={70}*/}
+                {/*                            height={70}*/}
+                {/*                            className={Style.upload_box_slider_box_img_img}*/}
+                {/*                        />*/}
+                {/*                    </div>*/}
 
-                                    <div className={Style.upload_box_slider_box_img_icon}>
-                                        <TiTick />
-                                    </div>
-                                </div>
-                                <p>Crypto Legend - {el.category}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/*                    <div className={Style.upload_box_slider_box_img_icon}>*/}
+                {/*                        <TiTick />*/}
+                {/*                    </div>*/}
+                {/*                </div>*/}
+                {/*                <p>Crypto Legend - {el.category}</p>*/}
+                {/*            </div>*/}
+                {/*        ))}*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 <div className={formStyle.Form_box_input_social}>
                     <div className={formStyle.Form_box_input}>
@@ -201,7 +203,7 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                         <label htmlFor={"Price"}>Price</label>
                         <div className={formStyle.Form_box_input_box}>
                             <div className={formStyle.Form_box_input_box_icon}>
-                                <AiTwotonePropertySafety />
+                                <FaDollarSign />
                             </div>
                             <input
                                 type={"text"}
@@ -230,11 +232,11 @@ const UploadNFTComp = ({uploadToIpfs, createNFT}) => {
                         classStyle={Style.upload_box_btn_style}
                     />
 
-                    <Button
-                        btnName={"Preview"}
-                        handleClick={() => {}}
-                        classStyle={Style.upload_box_btn_style}
-                    />
+                    {/*<Button*/}
+                    {/*    btnName={"Preview"}*/}
+                    {/*    handleClick={() => {}}*/}
+                    {/*    classStyle={Style.upload_box_btn_style}*/}
+                    {/*/>*/}
                 </div>
             </div>
         </div>

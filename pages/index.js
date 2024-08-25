@@ -52,14 +52,14 @@ const index = () => {
     <HeroSection />
     <Service />
     <BigNftSlider />
-    <Title
-        heading={"Audio Collection"}
-        paragraph={"Discover the most outstanding NFTs in all topics of life."}
-    />
-    <AudioLive />
+    {/*<Title*/}
+    {/*    heading={"Audio Collection"}*/}
+    {/*    paragraph={"Discover the most outstanding NFTs in all topics of life."}*/}
+    {/*/>*/}
+    {/*<AudioLive />*/}
     {creators.length === 0 ? <Loader /> :  <FollowerTab TopCreator={creators}/>}
-    <Slider />
-    <Collection />
+    {/*<Slider />*/}
+    {/*<Collection />*/}
     <Title
         heading={"Featured NFTs"}
         paragraph={"Discover the most outstanding NFTs in all topics of life."}
@@ -68,14 +68,14 @@ const index = () => {
 
     {nfts.length === 0 ? <Loader /> : <NftCard NFTData={nfts}/>}
 
-    <Title
-        heading={"Browse by Category"}
-        paragraph={"Explore the NFTs in the most featured categories"}
-    />
-    <Category />
+    {/*<Title*/}
+    {/*    heading={"Browse by Category"}*/}
+    {/*    paragraph={"Explore the NFTs in the most featured categories"}*/}
+    {/*/>*/}
+    {/*<Category />*/}
     <Subscribe />
     <Brand />
-    <Video />
+    {/*<Video />*/}
 
   </div>;
 };

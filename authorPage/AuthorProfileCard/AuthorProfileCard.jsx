@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Image from "next/image";
 import {
     MdVerified,
@@ -17,19 +17,25 @@ import {BsThreeDots} from "react-icons/bs";
 import Style from './AuthorProfileCard.module.css'
 import images from '../../img'
 import {Button} from '../../components/index'
+import {NFTMarketPlaceContext} from "../../Context/NFTMarketPlaceContext";
 
 
-const AuthorProfileCard = ({currentAccount}) => {
+const AuthorProfileCard = ({account}) => {
 
+    const { currentAccount } = useContext(NFTMarketPlaceContext)
     const [share, setShare] = useState(false);
     const [report, setReport] = useState(false);
 
     const copyAddress = () => {
-        const copyText = document.getElementById("myInput")
+        navigator.clipboard.writeText(currentAccount)
+            .then(() => {
+                console.log('Address copied to clipboard');
+            })
+            .catch(err => {
+                console.error('Failed to copy address: ', err);
+            });
+    };
 
-        copyText.select();
-        navigator.clipboard.writeText(copyText.value);
-    }
 
     const openShare = () => {
         if(!share){
@@ -63,7 +69,7 @@ const AuthorProfileCard = ({currentAccount}) => {
                 </div>
 
                 <div className={Style.AuthorProfileCard_box_info}>
-                    <h2>Dony Herrera{""}{" "}
+                    <h2>{`${currentAccount.slice(0, 5)}...${currentAccount.slice(-5)}`}{""}{" "}
                         <span>
                             <MdVerified/>
                         </span>{" "}
@@ -72,7 +78,7 @@ const AuthorProfileCard = ({currentAccount}) => {
                     <div className={Style.AuthorProfileCard_box_info_address}>
                         <input
                             type={"text"}
-                            value={currentAccount}
+                            value={"Copy Address"}
                             id={"myInput"}
                             readOnly
                         />
@@ -103,57 +109,57 @@ const AuthorProfileCard = ({currentAccount}) => {
                     </div>
                 </div>
 
-                <div className={Style.AuthorProfileCard_box_share}>
-                    <Button btnName="Folow" handleClick={() => {}} />
-                    <MdCloudUpload
-                        onClick={() => openShare()}
-                        className={Style.AuthorProfileCard_box_share_icon}
-                    />
+                {/*<div className={Style.AuthorProfileCard_box_share}>*/}
+                {/*    <Button btnName="Folow" handleClick={() => {}} />*/}
+                {/*    <MdCloudUpload*/}
+                {/*        onClick={() => openShare()}*/}
+                {/*        className={Style.AuthorProfileCard_box_share_icon}*/}
+                {/*    />*/}
 
-                    {share && (
-                        <div className={Style.AuthorProfileCard_box_share_upload}>
-                            <p>
-                                <span>
-                                    <TiSocialFacebook/>
-                                </span>{""}
-                                FaceBook
-                            </p>
-                            <p>
-                                <span>
-                                    <TiSocialInstagram/>
-                                </span>{""}
-                                Instagram
-                            </p>
-                            <p>
-                                <span>
-                                    <TiSocialYoutube/>
-                                </span>{""}
-                                Youtube
-                            </p>
-                            <p>
-                                <span>
-                                    <TiSocialLinkedin/>
-                                </span>{""}
-                                Linkedin
-                            </p>
+                {/*    {share && (*/}
+                {/*        <div className={Style.AuthorProfileCard_box_share_upload}>*/}
+                {/*            <p>*/}
+                {/*                <span>*/}
+                {/*                    <TiSocialFacebook/>*/}
+                {/*                </span>{""}*/}
+                {/*                FaceBook*/}
+                {/*            </p>*/}
+                {/*            <p>*/}
+                {/*                <span>*/}
+                {/*                    <TiSocialInstagram/>*/}
+                {/*                </span>{""}*/}
+                {/*                Instagram*/}
+                {/*            </p>*/}
+                {/*            <p>*/}
+                {/*                <span>*/}
+                {/*                    <TiSocialYoutube/>*/}
+                {/*                </span>{""}*/}
+                {/*                Youtube*/}
+                {/*            </p>*/}
+                {/*            <p>*/}
+                {/*                <span>*/}
+                {/*                    <TiSocialLinkedin/>*/}
+                {/*                </span>{""}*/}
+                {/*                Linkedin*/}
+                {/*            </p>*/}
 
-                        </div>
-                    )}
+                {/*        </div>*/}
+                {/*    )}*/}
 
-                    <BsThreeDots
-                        onClick={() => openReport()}
-                        className={Style.AuthorProfileCard_box_share_icon}
-                    />
-                    {report && (
-                        <p className={Style.AuthorProfileCard_box_share_report}>
-                            <span>
-                                <MdOutlineReportProblem />
-                            </span>{""}
-                            Report User
-                        </p>
-                    )}
+                {/*    <BsThreeDots*/}
+                {/*        onClick={() => openReport()}*/}
+                {/*        className={Style.AuthorProfileCard_box_share_icon}*/}
+                {/*    />*/}
+                {/*    {report && (*/}
+                {/*        <p className={Style.AuthorProfileCard_box_share_report}>*/}
+                {/*            <span>*/}
+                {/*                <MdOutlineReportProblem />*/}
+                {/*            </span>{""}*/}
+                {/*            Report User*/}
+                {/*        </p>*/}
+                {/*    )}*/}
 
-                </div>
+                {/*</div>*/}
             </div>
         </div>
     )

@@ -4,12 +4,12 @@ import Style from './Discover.module.css';
 
 const Discover = ({ closeAllMenus }) => {
     const discover = [
-        { name: "Collection", link: "collection" },
-        { name: "Search", link: "searchPage" },
-        { name: "Author Profile", link: "author" },
-        { name: "NFT Details", link: "nft-details" },
+        // { name: "Collection", link: "collection" },
+        { name: "Search NFTs", link: "searchPage" },
+        { name: "Creator Profile", link: "author" },
+        // { name: "NFT Details", link: "nft-details" },
         { name: "Account Settings", link: "account" },
-        { name: "Upload NFT", link: "upload-nft" },
+        { name: "Create NFT", link: "upload-nft" },
         { name: "Connect Wallet", link: "connect-wallet" },
         { name: "Blog", link: "blog" },
     ];
