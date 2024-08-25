@@ -29,7 +29,7 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
                 />
                 <input
                     type={"text"}
-                    placeholder={"Type your keyword"}
+                    placeholder={"Search for NFTs"}
                     onChange={(e) => setSearchItem(e.target.value)}
                     value={searchItem}
                 />

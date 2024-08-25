@@ -4,6 +4,7 @@ import {useDropzone} from "react-dropzone";
 import images from '../img'
 
 import Form from '../accountPage/Form/Form'
+import { FaUser } from "react-icons/fa";
 
 
 import Style from '../styles/account.module.css'
@@ -32,13 +33,7 @@ const Account = () => {
             <div className={Style.account_box}>
                 <div className={Style.account_box_img} {...getRootProps()}>
                     <input {...getInputProps()}/>
-                    <Image
-                        src={images.user1}
-                        alt={"account upload"}
-                        width={150}
-                        height={150}
-                        className={Style.account_box_img_img}
-                    />
+                    <FaUser size={30}/>
                     <p className={Style.account_box_img_para}>Change Image</p>
                 </div>
                 <div className={Style.account_box_form}>
