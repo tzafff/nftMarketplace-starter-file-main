@@ -57,20 +57,20 @@ const FollowerTabCard = ({ i, el }) => {
                         <p>{el.total || 0} ETH</p>
                     </div>
 
-                    <div className={Style.FollowerTabCard_box_info_following}>
-                        {following ? (
-                            <a onClick={followMe}>
-                                Follow{" "}
-                                <span>
-                                    <TiTick />
-                                </span>
-                            </a>
-                        ) : (
-                            <a onClick={followMe}>
-                                Following
-                            </a>
-                        )}
-                    </div>
+                    {/*<div className={Style.FollowerTabCard_box_info_following}>*/}
+                    {/*    {following ? (*/}
+                    {/*        <a onClick={followMe}>*/}
+                    {/*            Follow{" "}*/}
+                    {/*            <span>*/}
+                    {/*                <TiTick />*/}
+                    {/*            </span>*/}
+                    {/*        </a>*/}
+                    {/*    ) : (*/}
+                    {/*        <a onClick={followMe}>*/}
+                    {/*            Following*/}
+                    {/*        </a>*/}
+                    {/*    )}*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </div>
