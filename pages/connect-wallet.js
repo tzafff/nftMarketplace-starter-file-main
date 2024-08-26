@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import Style from '../styles/connect-wallet.module.css';
 import images from '../img'
-import walletconnect from "../img/walletconnect.png";
 import {NFTMarketPlaceContext} from '../Context/NFTMarketPlaceContext'
 const ConnectWallet = () => {
 
