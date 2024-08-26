@@ -19,7 +19,7 @@ const SearchPage = () => {
             fetchNFTs().then((item) => {
                 setNfts(item?.reverse())
                 setNftsCopy(item)
-                console.log(item)
+                // console.log(item)
             })
         } catch (error) {
             setError("Failed to fetch your NFTs or listed NFTs. Please try again.");

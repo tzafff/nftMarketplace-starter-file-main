@@ -42,7 +42,6 @@ const index = () => {
     fetchNFTs().then((item) => {
       setNfts(item?.reverse())
       setNftsCopy(item)
-      console.log(item)
     })
   }, []);
 
