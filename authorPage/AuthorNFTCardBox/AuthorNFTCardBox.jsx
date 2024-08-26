@@ -38,32 +38,32 @@ const AuthorNftCardBox = ({ collectibles, created, like, follower, following, nf
     const followerArray = [
         {
             background: images.creatorbackground1,
-            user: images.user1,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground2,
-            user: images.user2,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground5,
-            user: images.user5,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground6,
-            user: images.user6,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
     ]
@@ -71,17 +71,17 @@ const AuthorNftCardBox = ({ collectibles, created, like, follower, following, nf
     const followingArray = [
         {
             background: images.creatorbackground1,
-            user: images.user3,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground2,
-            user: images.user2,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
         {
             background: images.creatorbackground3,
-            user: images.user1,
+            user: images.rapper4,
             seller: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
         },
     ]

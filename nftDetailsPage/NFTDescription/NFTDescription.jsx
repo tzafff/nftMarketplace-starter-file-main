@@ -32,29 +32,29 @@ const NftDescription = ({ nft }) => {
 
     const router = useRouter()
 
-    const historyArray = [
-        images.user1,
-        images.user2,
-        images.user3,
-        images.user4,
-        images.user5,
-    ]
-
-    const provenanceArray = [
-        images.user6,
-        images.user7,
-        images.user8,
-        images.user9,
-        images.user10,
-    ]
-
-    const ownerArray = [
-        images.user3,
-        images.user2,
-        images.user4,
-        images.user5,
-        images.user1,
-    ]
+    // const historyArray = [
+    //     images.user1,
+    //     images.user2,
+    //     images.user3,
+    //     images.user4,
+    //     images.user5,
+    // ]
+    //
+    // const provenanceArray = [
+    //     images.user6,
+    //     images.user7,
+    //     images.user8,
+    //     images.user9,
+    //     images.user10,
+    // ]
+    //
+    // const ownerArray = [
+    //     images.user3,
+    //     images.user2,
+    //     images.user4,
+    //     images.user5,
+    //     images.user1,
+    // ]
 
     const openSocial = () => {
         if(!social){
@@ -99,7 +99,7 @@ const NftDescription = ({ nft }) => {
         }
     }
 
-    const { buyNFT, currentAccount } = useContext(NFTMarketPlaceContext);
+    const { buyNFT, currentAccount, unlistNFT } = useContext(NFTMarketPlaceContext);
 
     return (
         <div className={Style.NftDescription}>
@@ -261,6 +261,17 @@ const NftDescription = ({ nft }) => {
                                     classStyle={Style.button}
                                 />
                             )}
+
+
+                            {nft && nft.owner && currentAccount !== nft.owner.toLowerCase() && currentAccount === nft.seller.toLowerCase() && (
+                                <Button
+                                    icon={<FaWallet />}
+                                    btnName={"Remove from Marketplace"}
+                                    handleClick={() => unlistNFT(nft.tokenId)}
+                                    classStyle={Style.button}
+                                />
+                            )}
+
 
 
 

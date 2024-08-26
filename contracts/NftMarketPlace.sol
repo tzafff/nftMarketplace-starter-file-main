@@ -34,6 +34,11 @@ contract NftMarketPlace is ERC721URIStorage {
         bool sold
     );
 
+    event MarketItemUnlisted(
+        uint256 indexed tokenId,
+        address owner
+    );
+
     error NFTMarketplace__CallerIsNotContractOwner();
     error NFTMarketplace__PriceMustBeAtLeastOneWei();
     error NFTMarketplace__PriceMustEqualListingPrice();
@@ -104,6 +109,23 @@ contract NftMarketPlace is ERC721URIStorage {
         _itemsSold.decrement();
 
         _transfer(msg.sender, address(this), tokenId);
+    }
+
+    /* Unlists an NFT and transfers it back to the owner */
+    function unlistToken(uint256 tokenId) public {
+        MarketItem storage item = idToMarketItem[tokenId];
+
+        if (item.owner != address(this)) revert NFTMarketplace__OnlyItemOwner(); // Make sure the NFT is listed
+        if (item.seller != msg.sender) revert NFTMarketplace__OnlyItemOwner(); // Make sure the caller is the owner
+
+        item.owner = payable(msg.sender);
+        item.seller = payable(address(0));
+        item.sold = true;
+        _itemsSold.increment();
+
+        _transfer(address(this), msg.sender, tokenId);
+
+        emit MarketItemUnlisted(tokenId, msg.sender);
     }
 
     /* Creates the sale of a marketplace item */

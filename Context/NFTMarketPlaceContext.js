@@ -186,6 +186,24 @@ export const NFTMarketPlaceProvider = (({children}) => {
     }
 
 
+    //--------UNLIST NFT
+    const unlistNFT = async (tokenId) => {
+        try {
+            const contract = await connectingWithSmartContract();
+            const transaction = await contract.unlistToken(tokenId);
+
+            await transaction.wait();
+            console.log("NFT unlisted successfully:", transaction);
+
+            router.push('/searchPage'); // Redirect to a different page after unlisting
+        } catch (error) {
+            setError("Failed to unlist NFT. Please try again.");
+            setOpenError(true);
+            console.error("Error unlisting NFT:", error.message);
+        }
+    };
+
+
     //--------FETCH NFT FUNCTIONS
     const fetchNFTs = async () => {
         try {
@@ -296,7 +314,8 @@ export const NFTMarketPlaceProvider = (({children}) => {
             setOpenError,
             openError,
             error,
-            setError
+            setError,
+            unlistNFT
         }}
     >
         {children}

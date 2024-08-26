@@ -80,7 +80,7 @@ const NftCard = ({NFTData}) => {
                                             <p>{el.price}ETH</p>
                                         </div>
                                         <div className={Style.NFTCard_box_update_details_price_box_stock}>
-                                            <small>63 in stock</small>
+                                            {/*<small>63 in stock</small>*/}
                                         </div>
                                     </div>
                                 </div>

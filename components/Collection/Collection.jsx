@@ -18,100 +18,100 @@ const Collection = () => {
     const CardArray = [
             {
                 background: images.creatorbackground1,
-                user: images.user1,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground1,
-                user: images.user1,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground2,
-                user: images.user2,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground3,
-                user: images.user3,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground3,
-                user: images.user3,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground4,
-                user: images.user4,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground7,
-                user: images.user7,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground9,
-                user: images.user9,
+                user: images.rapper4,
             },
             {
                 background: images.creatorbackground10,
-                user: images.user10,
+                user: images.rapper4,
             },
         ]
     ;
     const FollowingArray = [
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground5,
-            user: images.user5,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground6,
-            user: images.user6,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground7,
-            user: images.user7,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground8,
-            user: images.user8,
+            user: images.rapper4,
         },
     ];
     const NewsArray = [
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground6,
-            user: images.user6,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground1,
-            user: images.user1,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground2,
-            user: images.user2,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground5,
-            user: images.user5,
+            user: images.rapper4,
         },
 
     ];
