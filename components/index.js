@@ -8,7 +8,7 @@ import Subscribe from "./Subscribe/Subscribe";
 import Title from "./Title/Title";
 import Category from "./Category/Category";
 import Filter from "./Filter/Filter";
-import NftCard from "./NftCard/NftCard";
+import NftCard from "./NFTCard/NFTCard";
 import Collection from "./Collection/Collection";
 import FollowerTab from "./FollowerTab/FollowerTab";
 import AudioLive from "./AudioLive/AudioLive";
