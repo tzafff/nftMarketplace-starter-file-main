@@ -1,4 +1,7 @@
 export const getTopCreators = (creators) => {
+    if (!Array.isArray(creators) || creators.length === 0) {
+        return [];
+    }
     const finalCreators = [];
 
     const finalResults = creators.reduce((index, currentValue) => {

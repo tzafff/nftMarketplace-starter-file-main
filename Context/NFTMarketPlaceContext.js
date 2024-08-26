@@ -208,9 +208,11 @@ export const NFTMarketPlaceProvider = (({children}) => {
     const fetchNFTs = async () => {
         try {
             const provider = new ethers.providers.JsonRpcProvider();
-            const contract = fetchContract(provider)
+            const contract = fetchContract(provider);
+
 
             const data = await contract.fetchMarketItems();
+            console.log('Fetched market items:', data);
             //console.log(data)
 
             const items = await Promise.all(data.map(async ({tokenId, seller, owner, price: unformattedPrice}) => {
@@ -225,9 +227,12 @@ export const NFTMarketPlaceProvider = (({children}) => {
                     price, tokenId: tokenId.toNumber(), seller, owner, image, name, description, tokenURI
                 };
             }));
+            console.log(items)
+
             return items;
 
         } catch (error) {
+            console.log("Error fetching NFTs:", error.message);
             setError("Failed to fetch NFTs. Please refresh the page or try again later.");
             setOpenError(true);
             console.error("Error fetching NFTs:", error.message);

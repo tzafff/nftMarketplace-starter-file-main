@@ -23,27 +23,33 @@ import {getTopCreators} from '../TopCreators/TopCreators';
 
 const index = () => {
 
-  const { checkIfWalletIsConnected } = useContext(NFTMarketPlaceContext)
+  const { checkIfWalletIsConnected } = useContext(NFTMarketPlaceContext);
 
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
 
-  const {fetchNFTs} = useContext(NFTMarketPlaceContext);
+  const { fetchNFTs } = useContext(NFTMarketPlaceContext);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
 
   // Creator List
-  const creators = getTopCreators(nfts);
+  const creators = nfts.length > 0 ? getTopCreators(nfts) : [];
   // console.log(creators)
 
 
   useEffect(() => {
     fetchNFTs().then((item) => {
-      setNfts(item?.reverse())
-      setNftsCopy(item)
-    })
+      console.log('Fetched NFTs:', item);
+      if (Array.isArray(item) && item.length > 0) {
+        setNfts(item.reverse());
+        setNftsCopy(item);
+      } else {
+        console.error("No NFTs fetched or data is not in expected format.");
+      }
+    });
   }, []);
+
 
 
 
@@ -65,7 +71,7 @@ const index = () => {
     />
     <Filter />
 
-    {nfts.length === 0 ? <Loader /> : <NftCard NFTData={nfts}/>}
+    {nfts && nfts.length === 0 ? <Loader /> : <NftCard NFTData={nfts}/>}
 
     {/*<Title*/}
     {/*    heading={"Browse by Category"}*/}
