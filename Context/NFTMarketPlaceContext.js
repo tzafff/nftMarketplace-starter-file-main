@@ -207,8 +207,9 @@ export const NFTMarketPlaceProvider = (({children}) => {
     //--------FETCH NFT FUNCTIONS
     const fetchNFTs = async () => {
         try {
-            const provider = new ethers.providers.JsonRpcProvider();
-            const contract = fetchContract(provider);
+            // const provider = new ethers.providers.JsonRpcProvider();
+            // const contract = fetchContract(provider);
+            const contract = await connectingWithSmartContract();
 
 
             const data = await contract.fetchMarketItems();
