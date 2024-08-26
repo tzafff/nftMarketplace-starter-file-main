@@ -95,6 +95,7 @@
 .navbar_container_right_button {
     position: relative;
     cursor: pointer;
+    z-index: 111111111;
 }
 
 .navbar_container_right_profile_box {

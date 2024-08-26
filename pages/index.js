@@ -23,33 +23,32 @@ import {getTopCreators} from '../TopCreators/TopCreators';
 
 const index = () => {
 
-  const { checkIfWalletIsConnected } = useContext(NFTMarketPlaceContext);
-
-  useEffect(() => {
-    checkIfWalletIsConnected();
-  }, []);
-
-  const { fetchNFTs } = useContext(NFTMarketPlaceContext);
+  const { checkIfWalletIsConnected, fetchNFTs } = useContext(NFTMarketPlaceContext);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
 
-  // Creator List
-  const creators = nfts.length > 0 ? getTopCreators(nfts) : [];
-  // console.log(creators)
-
+  useEffect(() => {
+    checkIfWalletIsConnected();
+  }, [checkIfWalletIsConnected]);
 
   useEffect(() => {
-    fetchNFTs().then((item) => {
-      console.log('Fetched NFTs:', item);
-      if (Array.isArray(item) && item.length > 0) {
-        setNfts(item.reverse());
-        setNftsCopy(item);
-      } else {
-        console.error("No NFTs fetched or data is not in expected format.");
+    const loadNFTs = async () => {
+      try {
+        const fetchedNFTs = await fetchNFTs();
+        if (Array.isArray(fetchedNFTs) && fetchedNFTs.length > 0) {
+          setNfts(fetchedNFTs.reverse());
+          setNftsCopy(fetchedNFTs);
+        } else {
+          console.error('No NFTs fetched or data is not in expected format.');
+        }
+      } catch (error) {
+        console.error('Error fetching NFTs:', error.message);
       }
-    });
-  }, []);
+    };
+    loadNFTs();
+  }, [fetchNFTs]);
 
+  const creators = nfts.length > 0 ? getTopCreators(nfts) : [];
 
 
 

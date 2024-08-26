@@ -40,6 +40,13 @@ export const NFTMarketPlaceProvider = (({children}) => {
 
     const router = useRouter();
 
+    useEffect(() => {
+        const init = async () => {
+            await checkIfWalletIsConnected();
+        };
+        init();
+    }, []);
+
     //--------CHECK IF WALLET IS CONNECTED
     const checkIfWalletIsConnected = async () => {
         try {
@@ -52,6 +59,16 @@ export const NFTMarketPlaceProvider = (({children}) => {
             const account = await window.ethereum.request({method: "eth_accounts"});
 
             if (account.length) {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const { chainId } = await provider.getNetwork();
+
+                if (chainId !== 11155111) {
+                    setError("Please switch to the Sepolia network and reload the page!");
+                    setOpenError(true);
+                    return ;
+                }
+
+
                 setCurrentAccount(account[0])
             } else {
                 setError("No account found. Please connect your wallet.");
@@ -66,9 +83,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
         }
     }
 
-    useEffect(() => {
-        checkIfWalletIsConnected()
-    }, []);
+
 
     //--------CONNECT WALLET
     const connectWallet = async () => {
@@ -233,17 +248,11 @@ export const NFTMarketPlaceProvider = (({children}) => {
             return items;
 
         } catch (error) {
-            console.log("Error fetching NFTs:", error.message);
-            setError("Failed to fetch NFTs. Please refresh the page or try again later.");
-            setOpenError(true);
             console.error("Error fetching NFTs:", error.message);
 
         }
     }
 
-    useEffect(() => {
-        fetchNFTs();
-    }, []);
 
     //--------FETCH MY NFT OR LISTED NFT
     const fetchMyNFTsOrListedNFTs = async (type) => {
@@ -287,9 +296,7 @@ export const NFTMarketPlaceProvider = (({children}) => {
         }
     }
 
-    useEffect(() => {
-        fetchMyNFTsOrListedNFTs()
-    }, []);
+
 
     //--------BUY NFTs
     const buyNFT = async (nft) => {
