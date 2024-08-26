@@ -83,7 +83,7 @@ const BigNftSlider = () => {
 
                             <div className={Style.bigNFTSlider_box_left_bidding}>
                                 <div className={Style.bigNFTSlider_box_left_bidding_box}>
-                                    <small>Current Bid</small>
+                                    <small>Current Price</small>
                                     <p>
                                         {nfts[idNumber].price} ETH
                                     </p>

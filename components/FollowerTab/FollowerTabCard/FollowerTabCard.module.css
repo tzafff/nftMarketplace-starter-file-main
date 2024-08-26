@@ -44,6 +44,9 @@
     text-align: center;
     margin-top: -2rem;
     position: relative;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
 }
 
 .FollowerTabCard_box_profile_img{
@@ -52,15 +55,16 @@
     z-index: 222;
 }
 
-.FollowerTabCard_box_profile::before{
+.FollowerTabCard_box_profile::before {
     position: absolute;
     content: "";
     width: 5rem;
     height: 5rem;
     background-color: var(--main-bg-color);
     border-radius: 50%;
-    top: -20%;
-    left: 37%;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's size */
 }
 
 .FollowerTabCard_box_info{

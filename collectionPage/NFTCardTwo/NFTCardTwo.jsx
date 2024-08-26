@@ -29,15 +29,15 @@ const NftCardTwo = ({ NFTData }) => {
                     <div className={Style.NFTCardTwo_box} key={i + 1}>
                         <div className={Style.NFTCardTwo_box_like}>
                             <div className={Style.NFTCardTwo_box_like_box}>
-                                <div className={Style.NFTCardTwo_box_like_box_box}>
-                                    <BsImage
-                                        className={Style.NFTCardTwo_box_like_box_box_icon}
-                                    />
-                                    <p onClick={() => likeNFT()}>
-                                        {like ? <AiOutlineHeart /> : <AiFillHeart />}{""}
-                                        <span>{likeInc + 1}</span>
-                                    </p>
-                                </div>
+                                {/*<div className={Style.NFTCardTwo_box_like_box_box}>*/}
+                                {/*    <BsImage*/}
+                                {/*        className={Style.NFTCardTwo_box_like_box_box_icon}*/}
+                                {/*    />*/}
+                                {/*    <p onClick={() => likeNFT()}>*/}
+                                {/*        {like ? <AiOutlineHeart /> : <AiFillHeart />}{""}*/}
+                                {/*        <span>{likeInc + 1}</span>*/}
+                                {/*    </p>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
 
@@ -54,21 +54,21 @@ const NftCardTwo = ({ NFTData }) => {
 
                         <div className={Style.NFTCardTwo_box_info}>
                             <div className={Style.NFTCardTwo_box_info_left}>
-                                <LikeProfile />
+                                {/*<LikeProfile />*/}
                                 <p>{el.name}</p>
                             </div>
-                            <small>4{i + 2}</small>
+                            {/*<small>4{i + 2}</small>*/}
                         </div>
 
                         <div className={Style.NFTCardTwo_box_price}>
                             <div className={Style.NFTCardTwo_box_price_box}>
-                                <small>Current Bid</small>
+                                <small>Current Price</small>
                                 <p>{el.price} ETH</p>
                             </div>
-                            <p className={Style.NFTCardTwo_box_price_stock}>
-                                <MdTimer />
-                                <span>{i + 1} Hours Left</span>
-                            </p>
+                            {/*<p className={Style.NFTCardTwo_box_price_stock}>*/}
+                            {/*    <MdTimer />*/}
+                            {/*    <span>{i + 1} Hours Left</span>*/}
+                            {/*</p>*/}
                         </div>
                     </div>
                 </Link>

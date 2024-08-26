@@ -5,7 +5,7 @@ import images from '../../img'
 import Style from './LikeProfile.module.css'
 const LikeProfile = () => {
 
-    const imageArray = [images.user1, images.user2, images.user3, images.user4]
+    const imageArray = [images.rapper4, images.rapper4, images.rapper4, images.rapper4]
     return (
         <div className={Style.like}>
             {imageArray.map((el, i) => (

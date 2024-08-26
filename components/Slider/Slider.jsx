@@ -10,27 +10,27 @@ const Slider = () => {
     const sliderArray = [
         {
             background: images.creatorbackground1,
-            user: images.user1,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground7,
-            user: images.user7,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground2,
-            user: images.user2,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground8,
-            user: images.user8,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground3,
-            user: images.user3,
+            user: images.rapper4,
         },
         {
             background: images.creatorbackground4,
-            user: images.user4,
+            user: images.rapper4,
         },
 
     ]
